@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites time="0.022" tests="9" failures="2">
+  <testsuite id="0" name="Source.TestSubmission.dll" tests="9" failures="2" time="0.022">
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Use_Cesar_Cypher_When_Crypt(message: &quot;the quick brown fox jumps over the lazy dog&quot;, cypherMessage: &quot;wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj&quot;)" time="0.0080000" />
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Not_Accept_Null_When_Decrypt" time="0.0010000" />
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Convert_To_Lower_Case_When_Decrypt" time="0.0010000" />
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Not_Accept_Null_When_Crypt" time="0.0010000" />
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Keep_Numbers_Out_When_Crypt" time="0.0010000" />
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Convert_To_Lower_Case_When_Crypt" time="0.0010000" />
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Use_Cesar_Cypher_When_Decrypt(cypherMessage: &quot;wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj&quot;, message: &quot;the quick brown fox jumps over the lazy dog&quot;)" time="0.0010000" />
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Ensure_Letter_Or_Number_When_Decrypt" time="0.0070000">
+      <error message="Assert.Throws() Failure&#xD;&#xA;Expected: typeof(System.ArgumentOutOfRangeException)&#xD;&#xA;Actual:   (No exception was thrown)">   at Codenation.Challenge.CesarCypherTest.Should_Ensure_Letter_Or_Number_When_Decrypt() in C:\Users\junio\codenation\csharp-2\Source.TestSubmission\CesarCypherTest.cs:line 36</error>
+    </testcase>
+    <testcase classname="Codenation.Challenge.CesarCypherTest" name="Codenation.Challenge.CesarCypherTest.Should_Ensure_Letter_Or_Number_When_Crypt" time="0.0010000">
+      <error message="Assert.Throws() Failure&#xD;&#xA;Expected: typeof(System.ArgumentOutOfRangeException)&#xD;&#xA;Actual:   (No exception was thrown)">   at Codenation.Challenge.CesarCypherTest.Should_Ensure_Letter_Or_Number_When_Crypt() in C:\Users\junio\codenation\csharp-2\Source.TestSubmission\CesarCypherTest.cs:line 26</error>
+    </testcase>
+  </testsuite>
+</testsuites>
