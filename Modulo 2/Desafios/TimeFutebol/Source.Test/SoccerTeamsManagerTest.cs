@@ -76,5 +76,79 @@ namespace Codenation.Challenge
 
             Assert.Equal(visitorMatchColor, manager.GetVisitorShirtColor(teamId, visitorTeamId));
         }
+
+        [Theory]
+        [InlineData("7,50,33,2,70", 10, "7,12,8,5,13,2,10,3,11,14")]
+        [InlineData("10,240,73,1,50", 5, "7, 12, 8, 5, 10")]
+        public void Should_Sort_All_Players_By_Skill_When_Get_Top_Players(String skillsMap, Int32 top, String topPlayersIds)
+        {
+            var manager = new SoccerTeamsManager();
+            manager.AddTeam(1, "Time 1", DateTime.Now, "cor 1", "cor 2");
+
+            var skillsLevelList = skillsMap.Split(',').Select(x => int.Parse(x)).ToList();
+            var topListId = topPlayersIds.Split(',').Select(x => int.Parse(x)).ToList();
+
+            for (int i = 0; i < skillsLevelList.Count(); i++)
+                manager.AddPlayer(i, 1, $"Jogador {i}", DateTime.Today, skillsLevelList[i], 0);
+                       
+            Assert.True(topListId.Equals(manager.GetTopPlayers(top)));
+        }
+
+        [Theory]
+        [InlineData("1509.10;200.20;3300;450020.11;50.0", 3)]
+        [InlineData("15090;45000;3300;2000;5000", 1)]
+        public void Should_Choose_Higher_Salary_Player(String salaries, Int32 highSalaryPlayerId)
+        {
+            var manager = new SoccerTeamsManager();
+            manager.AddTeam(1, "Time 1", DateTime.Now, "cor 1", "cor 2");
+
+            var salariesList = salaries.Split(';').Select(x => decimal.Parse(x)).ToList();
+
+            for (int i = 0; i < salariesList.Count(); i++)
+                manager.AddPlayer(i, 1, $"Jogador {i}", DateTime.Today, 0, salariesList[i]);
+
+            Assert.Equal(highSalaryPlayerId, manager.GetHigherSalaryPlayer(1));
+        }
+
+
+        [Theory]
+        [InlineData("17,22,50,33,50", 2)]
+        [InlineData("50,24,13,15,16", 0)]
+        [InlineData("15,20,33,11,50", 4)]
+        public void Should_Choose_Older_Team_Player(String ages, Int32 olderPlayerId)
+        {
+            var manager = new SoccerTeamsManager();
+            manager.AddTeam(1, "Time 1", DateTime.Now, "cor 1", "cor 2");
+
+            var agesList = ages.Split(',').Select(x => int.Parse(x)).ToList();
+
+            for (int i = 0; i < agesList.Count(); i++)
+            {
+
+                DateTime nasc = DateTime.Today.AddYears(-agesList[i]);
+                manager.AddPlayer(i, 1, $"Jogador {i}", nasc, 0, 0);
+            }
+
+            Assert.Equal(olderPlayerId, manager.GetHigherSalaryPlayer(1));
+        }
+
+        [Theory]
+        [InlineData("301,781,397,882,121,344,463,688,908,547", "121,301,344,397,463,547,688,781,882,908")]
+        [InlineData("51,22,23,42,5,1", "1,5,22,23,42,51")]
+        public void Should_Ensure_Sort_Order_When_Get_Teams(String teams, String teamsOrd)
+        {
+            var manager = new SoccerTeamsManager();
+            var teamsList = teams.Split(',').Select(x => int.Parse(x)).ToList();
+            var teamsListord = teamsOrd.Split(',').Select(x => int.Parse(x)).ToList();
+
+            for (int i = 0; i < teamsList.Count(); i++)
+            {
+                manager.AddTeam(i, $"Time {i}", DateTime.Now, "cor 1", "cor 2");                               
+            }
+            for (int i = 0; i < teamsList.Count(); i++)
+            {
+                Assert.True(teamsListord.Equals(manager.GetOlderTeamPlayer(teamsList[i])));
+            }
+        }      
     }
 }
