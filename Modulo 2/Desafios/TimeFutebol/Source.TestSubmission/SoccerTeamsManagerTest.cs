@@ -33,7 +33,7 @@ namespace Codenation.Challenge
             manager.AddTeam(teamId, $"Time {teamId}", DateTime.Now, "cor 1", "cor 2");
             playersIds.ToList().ForEach(playerId => {
                 manager.AddPlayer(playerId, teamId, $"Jogador {playerId}", DateTime.Today, 0, 0);
-            });
+            });            
             return manager;
         }
 
@@ -46,14 +46,14 @@ namespace Codenation.Challenge
             Assert.Throws<UniqueIdentifierException>(() =>
                 manager.AddTeam(teamId, $"Time {teamId}", DateTime.Now, "cor 1", "cor 2"));
         }
-
+ 
         [Fact]
         public void Should_Be_Valid_Player_When_Set_Team_Captain()
         {
             long teamId = 1;
             long playerId = 1;
             long wrongCaptainId = 2;
-
+            
             var manager = OnePlayerManagerFactory(teamId, playerId);
             Assert.Throws<PlayerNotFoundException>(() =>
                 manager.SetCaptain(wrongCaptainId));
@@ -64,7 +64,7 @@ namespace Codenation.Challenge
         {
             long teamId = 1;
             long playerId = 1;
-            long captainId = 1;
+            long captainId = 1;            
 
             var manager = OnePlayerManagerFactory(teamId, playerId);
             Assert.Throws<CaptainNotFoundException>(() =>
@@ -96,7 +96,7 @@ namespace Codenation.Challenge
             long wrongTeamId = 2;
             var manager = OnePlayerManagerFactory(teamId, playerId);
 
-            Assert.Throws<TeamNotFoundException>(() =>
+            Assert.Throws<TeamNotFoundException>(() => 
                 manager.GetTeamPlayers(wrongTeamId));
         }
 
@@ -104,7 +104,7 @@ namespace Codenation.Challenge
         public void Should_Ensure_Sort_Order_When_Get_Team_Players()
         {
             long teamId = 1;
-            var playersIds = new List<long>() { 15, 2, 33, 4, 13 };
+            var playersIds = new List<long>() {15, 2, 33, 4, 13};
             var manager = SomePlayersManagerFactory(teamId, playersIds);
 
             playersIds.Sort();
@@ -118,10 +118,10 @@ namespace Codenation.Challenge
             long playerId = 1;
             long wrongTeamId = 2;
             var manager = OnePlayerManagerFactory(teamId, playerId);
-            Assert.Throws<TeamNotFoundException>(() =>
+            Assert.Throws<TeamNotFoundException>(() => 
                 manager.GetBestTeamPlayer(wrongTeamId));
         }
-
+     
         [Theory]
         [InlineData("10,20,300,40,50", 2)]
         [InlineData("50,240,3,1,50", 1)]
@@ -131,7 +131,7 @@ namespace Codenation.Challenge
             long teamId = 1;
             var manager = NoPlayerManagerFactory(teamId);
             var skillsLevelList = skills.Split(',').Select(x => int.Parse(x)).ToList();
-            for (int i = 0; i < skillsLevelList.Count(); i++)
+            for(int i = 0; i < skillsLevelList.Count(); i++)
                 manager.AddPlayer(i, teamId, $"Jogador {i}", DateTime.Today, skillsLevelList[i], 0);
 
             Assert.Equal(bestPlayerId, manager.GetBestTeamPlayer(teamId));
@@ -143,7 +143,7 @@ namespace Codenation.Challenge
             long teamId = 1;
             long wrongTeamId = 2;
             var manager = NoPlayerManagerFactory(teamId);
-            Assert.Throws<TeamNotFoundException>(() =>
+            Assert.Throws<TeamNotFoundException>(() => 
                 manager.GetOlderTeamPlayer(wrongTeamId));
         }
 
@@ -156,12 +156,12 @@ namespace Codenation.Challenge
             long teamId = 1;
             var manager = NoPlayerManagerFactory(teamId);
             var playersAgeList = ages.Split(',').Select(x => int.Parse(x)).ToList();
-            for (int i = 0; i < playersAgeList.Count(); i++)
+            for(int i = 0; i < playersAgeList.Count(); i++)
                 manager.AddPlayer(i, teamId, $"Jogador {i}", DateTime.Today.AddYears(-1 * playersAgeList[i]), 0, 0);
 
             Assert.Equal(olderPlayerId, manager.GetOlderTeamPlayer(teamId));
         }
-
+        
         [Theory]
         [InlineData("51,22,23,42,5,1")]
         [InlineData("301,781,397,882,121,344,463,688,908,547")]
@@ -172,7 +172,7 @@ namespace Codenation.Challenge
             Assert.Equal(teamsIdsList, manager.GetTeams());
 
             teamsIdsList = teamsIds.Split(',').Select(x => long.Parse(x)).ToList();
-            foreach (var teamId in teamsIdsList)
+            foreach(var teamId in teamsIdsList)
                 manager.AddTeam(teamId, $"Time {teamId}", DateTime.Now, "cor 1", "cor 2");
 
             teamsIdsList.Sort();
@@ -185,7 +185,7 @@ namespace Codenation.Challenge
             long teamId = 1;
             long wrongTeamId = 2;
             var manager = NoPlayerManagerFactory(teamId);
-            Assert.Throws<TeamNotFoundException>(() =>
+            Assert.Throws<TeamNotFoundException>(() => 
                 manager.GetHigherSalaryPlayer(wrongTeamId));
         }
 
@@ -197,7 +197,7 @@ namespace Codenation.Challenge
             long teamId = 1;
             var manager = NoPlayerManagerFactory(teamId);
             var playersSalariesList = salaries.Split(';').Select(x => decimal.Parse(x)).ToList();
-            for (int i = 0; i < playersSalariesList.Count(); i++)
+            for(int i = 0; i < playersSalariesList.Count(); i++)
                 manager.AddPlayer(i, teamId, $"Jogador {i}", DateTime.Today, 0, playersSalariesList[i]);
 
             Assert.Equal(highSalaryPlayerId, manager.GetHigherSalaryPlayer(teamId));
@@ -214,7 +214,7 @@ namespace Codenation.Challenge
             var manager = NoPlayerManagerFactory(teamId);
             manager.AddPlayer(playerId, teamId, $"Jogador {playerId}", DateTime.Today, 0, salary);
 
-            Assert.Throws<PlayerNotFoundException>(() =>
+            Assert.Throws<PlayerNotFoundException>(() => 
                 manager.GetPlayerSalary(wrongPlayerId));
 
             Assert.Equal(salary, manager.GetPlayerSalary(playerId));
@@ -228,13 +228,13 @@ namespace Codenation.Challenge
             var manager = EmptyFactory();
             long playerId = 1;
             var teamSkillsList = skillsMap.Split('|').ToList();
-            for (int i = 0; i < teamSkillsList.Count(); i++)
+            for(int i = 0; i < teamSkillsList.Count(); i++)
             {
                 var teamId = i + 1;
                 manager.AddTeam(teamId, $"Time {teamId}", DateTime.Now, "cor 1", "cor 2");
                 var skillsList = teamSkillsList[i].Split(',').Select(x => int.Parse(x)).ToList();
-                for (int j = 0; j < skillsList.Count(); j++)
-                {
+                for(int j = 0; j < skillsList.Count(); j++)
+                {                    
                     manager.AddPlayer(playerId, teamId, $"Jogador {playerId}", DateTime.Today, skillsList[j], 0);
                     playerId++;
                 }

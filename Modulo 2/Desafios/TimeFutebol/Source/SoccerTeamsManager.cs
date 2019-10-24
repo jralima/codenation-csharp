@@ -124,8 +124,8 @@ namespace Codenation.Challenge
 
             ValidTeamFound(teamId);
 
-            // Caso o time informado não tenha um capitão
-            var listPlay = players.Where(x => x.TeamId == teamId || x.IsCaptain == true).ToList();
+            // Caso o time informado não tenha um capitão            
+            var listPlay = players.Where(x => x.TeamId == teamId && x.IsCaptain == true).ToList();
 
             if (listPlay.Count == 0)
                 throw new CaptainNotFoundException();
@@ -213,17 +213,17 @@ namespace Codenation.Challenge
                 {
                     MaxSkillLevel = item.SkillLevel;
 
-                    if(playerId == 0)
+                    if (playerId == 0)
                     {
                         playerId = item.Id;
                     }
                     else
                     {
-                        if(item.Id < playerId)
+                        if (item.Id < playerId)
                             playerId = item.Id;
                     }
                 }
-            }            
+            }
             return playerId;
         }
 
@@ -243,21 +243,20 @@ namespace Codenation.Challenge
             if (listPlay.Count == 0)
                 throw new PlayerNotFoundException();
 
-            listPlay.OrderByDescending(x => x.BirthDate);
+            var listOlder = listPlay.OrderBy(x => x.BirthDate).ToList();
 
             DateTime MaxBirthDate = new DateTime(1900, 1, 1);
-            long playerId = 0;
-            foreach (var item in listPlay)
+            long playerId = -1;
+            foreach (var item in listOlder)
             {
-                if (item.BirthDate >= MaxBirthDate)
+                if (playerId == -1)
                 {
+                    playerId = item.Id;
                     MaxBirthDate = item.BirthDate;
-
-                    if (playerId == 0)
-                    {
-                        playerId = item.Id;
-                    }
-                    else
+                }
+                else
+                {
+                    if (MaxBirthDate >= item.BirthDate)
                     {
                         if (item.Id < playerId)
                             playerId = item.Id;
@@ -271,11 +270,9 @@ namespace Codenation.Challenge
         // Retorna uma lista com o id de todos os times cadastrado, ordenada pelo id.
         // Retornar uma lista vazia caso não encontre times cadastrados.
         public List<long> GetTeams()
-        {            
+        {
             if (teams.Count == 0)
-                throw new TeamNotFoundException();
-
-            //teams.OrderBy(x => x.Id).ToList();
+                return new List<long>();
 
             var returnList = new List<long>();
             foreach (var item in teams)
@@ -287,6 +284,7 @@ namespace Codenation.Challenge
             return returnList;
         }
 
+        // Retorna o id do jogador com maior salário do time. Usar o menor id como critério de desempate.
         public long GetHigherSalaryPlayer(long teamId)
         {
             // parâmetro obrigatório
@@ -295,7 +293,33 @@ namespace Codenation.Challenge
                 throw new NotImplementedException();
             }
 
-            throw new NotImplementedException();
+            ValidTeamFound(teamId);
+            var listPlay = players.Where(x => x.TeamId == teamId).ToList();
+            if (listPlay.Count == 0)
+                throw new PlayerNotFoundException();
+
+            var listOlder = listPlay.OrderByDescending(x => x.Salary).ToList();
+
+            decimal MaxSalary = 0;
+            long playerId = -1;
+            foreach (var item in listOlder)
+            {
+                if (playerId == -1)
+                {
+                    playerId = item.Id;
+                    MaxSalary = item.Salary;
+                }
+                else
+                {
+                    if (MaxSalary <= item.Salary)
+                    {
+                        if (item.Id < playerId)
+                            playerId = item.Id;
+                    }
+                }
+            }
+
+            return playerId;
         }
 
         // Retorna o salário do jogador.
@@ -316,6 +340,8 @@ namespace Codenation.Challenge
         }
 
         // Retorna uma lista com o id dos top melhores jogadores, utilizar o menor id como critério de desempate.
+        // Caso não exista nenhum jogador cadastrado, retornar uma lista vazia.
+
         public List<long> GetTopPlayers(int top)
         {
             // parâmetro obrigatório
@@ -324,33 +350,18 @@ namespace Codenation.Challenge
                 throw new NotImplementedException();
             }
 
-            var listPlay = players.Where(x => x.TeamId == top).ToList();
+            if (players.Count == 0)
+                return new List<long>();
 
-            if (listPlay.Count == 0)
-                throw new PlayerNotFoundException();
+            var listPlayersOrder = players.OrderByDescending(x => x.SkillLevel).Take(top).ToList();
 
-            var listPlayersOrder = listPlay.OrderByDescending(x => x.SkillLevel).ToList();
+            var listReturn = new List<long>();
 
-            int MaxSkillLevel = 0;
-            long playerId = 0;
             foreach (var item in listPlayersOrder)
             {
-                if (item.SkillLevel >= MaxSkillLevel)
-                {
-                    MaxSkillLevel = item.SkillLevel;
-
-                    if (playerId == 0)
-                    {
-                        playerId = item.Id;
-                    }
-                    else
-                    {
-                        if (item.Id < playerId)
-                            playerId = item.Id;
-                    }
-                }
+                listReturn.Add(item.Id);
             }
-            return new List<long>(); // ajustar
+            return listReturn;
         }
 
         // Retorna a cor da camisa do time adversário. 
@@ -378,7 +389,7 @@ namespace Codenation.Challenge
             if (visitorTeam.Count() == 0)
             {
                 throw new TeamNotFoundException();
-            }           
+            }
 
             // Caso a mainShirtColor do time da casa seja igual a mainShirtColor do time de fora, retornar secondaryShirtColor do time de fora.
             if (homeTeam[0].MainShirtColor == visitorTeam[0].MainShirtColor)

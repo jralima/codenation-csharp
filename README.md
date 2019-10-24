@@ -17,17 +17,22 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Desafios:
   - [X] Criptografia de Júlio César (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-2)
     - Score: 100%
+	- Tentativas: 3
   - [X] Fibonacci (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-0)
     - Score: 100%
+	- Tentativas: 3
 
 ## Módulo 2 
 - Programação OO I
 - Classes
 - Objetos
 - Desafios:
-  - [ ] Os 10 maiores estados brasileiros em extensão territorial (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-3)
-  - [ ] Gerenciador de Times de Futebol (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-1)
-   - Score: 0%
+  - [X] Os 10 maiores estados brasileiros em extensão territorial (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-3)
+   - Score: 100%
+   - Tentativas: 1
+  - [X] Gerenciador de Times de Futebol (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-1)
+   - Score: 100%
+   - Tentativas: 3
 
 ## Módulo 3
 - Módulo: Programação OO II
