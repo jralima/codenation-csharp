@@ -8,9 +8,9 @@ namespace AceleraDev.Domain.Services
 {
     public class ClienteService : ServiceBase<Cliente>, IClienteService
     {
-        public ClienteService()
+        public ClienteService(IClienteRepository clienteRepository) 
+            : base(clienteRepository)
         {
-            base._repositoryBase = new ClienteRepository();
         }
 
         public List<Cliente> BuscarTop10()

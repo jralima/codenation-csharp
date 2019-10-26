@@ -1,8 +1,9 @@
 ﻿using AceleraDev.Domain.Models;
-using AceleraDev.Domain.Repositories.Base;
+using AceleraDev.Data.Repositories.Base;
 using System.Collections.Generic;
+using AceleraDev.Domain.Repositories;
 
-namespace AceleraDev.Domain.Repositories
+namespace AceleraDev.Data.Repositories
 {
     /// <summary>
     /// Classe Cliente Repository

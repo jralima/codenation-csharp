@@ -26,14 +26,12 @@ namespace AceleraDev.ConsoleApp
         }
         static void Main(string[] args)
         {
-            var clienteService = new ClienteService();
-            clienteService.Add(new Cliente { Nome = "Anastacio" });
-            
-            var data = clienteService.GetAll();
+            //var clienteService = new ClienteService();
+            //clienteService.Add(new Cliente { Nome = "Anastacio" });
 
-            // Console.WriteLine(string.Join("|", data));
+            //var data = clienteService.GetAll();
 
-            TesteValidacaoCliente();
+            //TesteValidacaoCliente();
 
             Console.ReadLine();
         }

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AceleraDev.Domain.Repositories.Base
+namespace AceleraDev.Data.Repositories.Base
 {
     /// <summary>
     /// Classe de repositório base

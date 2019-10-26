@@ -10,6 +10,11 @@ namespace AceleraDev.Domain.Repositories.Base
     {
         protected IRepositoryBase<TModel> _repositoryBase;
 
+        public ServiceBase(IRepositoryBase<TModel> repositoryBase)
+        {
+            _repositoryBase = repositoryBase;
+        }
+
         /// <summary>
         /// Método para incluir
         /// </summary>
