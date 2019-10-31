@@ -54,7 +54,7 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
   - [Reflexão no .NET](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/reflection)
   - [Acessando atributos personalizados](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/accessing-custom-attributes)
 - Desafios:
-  - [ ] [Processe dados dos jogadores do FIFA© 2017](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-4)
+  - [X] [Processe dados dos jogadores do FIFA© 2017](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-4)
    - Score: 100%
    - Tentativas: 2
   - [ ] [Calculadora de Campos de Classe](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-6)
