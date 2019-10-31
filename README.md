@@ -10,8 +10,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 #### Média das Notas nos Desafios: 100%
 
 ## Módulo 1 
-[X] Finalizado
-
 - Programação I
 - Básico da linguagem C#
 - Estruturas de dados, lógica de programação
@@ -31,8 +29,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 	- Tentativas: 3
 
 ## Módulo 2 
-[X] Finalizado
-
 - Programação OO I
 - Classes
 - Objetos
@@ -48,8 +44,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Tentativas: 3
 
 ## Módulo 3
-[ ] Finalizado
-
 - Módulo: Programação OO II
 - Hierarquia
 - Interfaces
@@ -67,8 +61,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Tentativas: 0
    
 ## Módulo 4
-[ ] Finalizado
-
 - Modelagem de banco de dados relacional
 - Banco de dados em C#
 - Criar banco de dados
@@ -80,8 +72,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Score: 0%
 
 ## Módulo 5
-[ ] Finalizado
-
 - Manipulação de dados em bancos de dados relacionais
 - Select
 - Update 
@@ -97,8 +87,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Tentativas: 0
 
 ## Módulo 6
-[ ] Finalizado
-
 - Criação de APIs Rest
 - Métodos (GET, PUT, DELETE)	
 - Status Codes (20X, 40X, 50X)
@@ -111,8 +99,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Tentativas: 0
 
 ## Módulo 7 
-[ ] Finalizado
-
 - Documentação e autenticação de APIs
 - Documentação de APIs (Swagger) 
 - Autenticação de APIs
@@ -124,8 +110,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Tentativas: 0
 
 ## Módulo 8 
-[ ] Finalizado
-
 - Git, boas práticas e clean code
 - Atividades:
   - 
@@ -135,8 +119,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Tentativas: 0
 
 ## Módulo 9
-[ ] Finalizado
-
 - Deploy de aplicações
 - Ferramentas e processos de deploy na nuvem
 - Atividades:
@@ -147,8 +129,6 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Tentativas: 0
 
 ## Módulo 10
-[ ] Finalizado
-
 - Preparação para o demo day  
 - Atividades:
   - 
