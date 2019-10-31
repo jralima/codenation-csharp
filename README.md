@@ -15,17 +15,17 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Básico da linguagem C#
 - Estruturas de dados, lógica de programação
 - Atividades:
-  - .NET Core Guide (https://docs.microsoft.com/en-us/dotnet/core/)
-  - Get Started - C# Guide (https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/)
-  - Downloads | IDE, Code, & Team Foundation Server | Visual Studio (https://visualstudio.microsoft.com/downloads/)
-  - Cursos da formação .NET | Alura (https://www.alura.com.br/formacao-dotnet)
-  - .NET Core Tutorials (https://docs.microsoft.com/en-us/dotnet/core/tutorials/)
-  - Cadeias de caracteres – Guia de Programação em C# (https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/)
+  - [.NET Core Guide](https://docs.microsoft.com/en-us/dotnet/core/)
+  - [Get Started - C# Guide](https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/)
+  - [Downloads | IDE, Code, & Team Foundation Server | Visual Studio](https://visualstudio.microsoft.com/downloads/)
+  - [Cursos da formação .NET | Alura](https://www.alura.com.br/formacao-dotnet)
+  - [.NET Core Tutorials](https://docs.microsoft.com/en-us/dotnet/core/tutorials/)
+  - [Cadeias de caracteres – Guia de Programação em C#](https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/)
 - Desafios:
-  - [X] Criptografia de Júlio César (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-2)
+  - [X] [Criptografia de Júlio César](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-2)
     - Score: 100%
 	- Tentativas: 3
-  - [X] Fibonacci (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-0)
+  - [X] [Fibonacci](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-0)
     - Score: 100%
 	- Tentativas: 3
 
@@ -34,13 +34,13 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Classes
 - Objetos
 - Atividades:
-  - Unit testing C# code in .NET Core using dotnet test and xUnit (https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test)
-  - .NET Core Tutorials (https://docs.microsoft.com/en-us/dotnet/core/tutorials/)
+  - [Unit testing C# code in .NET Core using dotnet test and xUnit](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test)
+  - [.NET Core Tutorials](https://docs.microsoft.com/en-us/dotnet/core/tutorials/)
 - Desafios:
-  - [X] Os 10 maiores estados brasileiros em extensão territorial (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-3)
+  - [X] [Os 10 maiores estados brasileiros em extensão territorial](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-3)
    - Score: 100%
    - Tentativas: 1
-  - [X] Gerenciador de Times de Futebol (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-1)
+  - [X] [Gerenciador de Times de Futebol](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-1)
    - Score: 100%
    - Tentativas: 3
 
@@ -49,14 +49,14 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Hierarquia
 - Interfaces
 - Atividades:
-  - C# – Lendo e escrevendo em arquivos textos (StreamReader/StreamWriter) (https://imasters.com.br/back-end/c-lendo-e-escrevendo-em-arquivos-textos-streamreaderstreamwriter)
-  - Estendendo metadados por meio de atributos (https://docs.microsoft.com/pt-br/dotnet/standard/attributes/)
-  - Reflexão no .NET (https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/reflection)
-  - Acessando atributos personalizados (https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/accessing-custom-attributes)
+  - [C# – Lendo e escrevendo em arquivos textos](StreamReader/StreamWriter) (https://imasters.com.br/back-end/c-lendo-e-escrevendo-em-arquivos-textos-streamreaderstreamwriter)
+  - [Estendendo metadados por meio de atributos](https://docs.microsoft.com/pt-br/dotnet/standard/attributes/)
+  - [Reflexão no .NET](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/reflection)
+  - [Acessando atributos personalizados](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/accessing-custom-attributes)
 - Desafios:
   - [ ] [Processe dados dos jogadores do FIFA© 2017](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-4)
-   - Score: 72%
-   - Tentativas: 1
+   - Score: 100%
+   - Tentativas: 2
   - [ ] [Calculadora de Campos de Classe](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-6)
    - Score: 0%
    - Tentativas: 0

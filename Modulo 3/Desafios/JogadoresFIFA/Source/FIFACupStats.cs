@@ -9,6 +9,7 @@ namespace Codenation.Challenge
 {
     public class FIFACupStats
     {
+        #region Constantes
         const int COLUNA_ID = 0;
         const int COLUNA_FULL_NAME = 2;
         const int COLUNA_NATIONALITY = 14;
@@ -17,6 +18,7 @@ namespace Codenation.Challenge
         const int COLUNA_BIRTH_DATE = 8;
         const int COLUNA_AGE = 6;
         const int COLUNA_EUR_WAGE = 17;
+        #endregion
 
         public string CSVFilePath { get; set; } = "data.csv";
         public Encoding CSVEncoding { get; set; } = Encoding.UTF8;
@@ -33,35 +35,42 @@ namespace Codenation.Challenge
             while ((linha = stream.ReadLine()) != null)
             {
                 string[] coluna = linha.Split(',');
-
-                Decimal _Eur_Release_Clause, _eur_Release_Clause = 0;
-                Decimal _Eur_Wage, _eur_Wage = 0;
-                int _Age, _age = 0;
-                int _Id, _id = 0;
-
-                if (int.TryParse(coluna[COLUNA_ID], out _Id))
-                    _id = _Id;
-
-                if (int.TryParse(coluna[COLUNA_AGE], out _Age))
-                    _age = _Age;
-
-                if (Decimal.TryParse(coluna[COLUNA_EUR_RELEASE_CLAUSE], out _Eur_Release_Clause))
-                    _eur_Release_Clause = _Eur_Release_Clause;
-
-                if (Decimal.TryParse(coluna[COLUNA_EUR_WAGE], out _Eur_Wage))
-                    _eur_Wage = _Eur_Wage;
-
-                ListFifaObject.Add(new FifaObject()
+                var player = new FifaObject
                 {
-                    Id = _id, //Convert.ToInt32(coluna[COLUNA_ID]),
+                    Eur_Release_Clause = -1,
+                    Eur_Wage = -1,
+                    Age = -1,
+                    Id = -1,
                     Full_Name = coluna[COLUNA_FULL_NAME],
                     Nationality = coluna[COLUNA_NATIONALITY],
-                    Club = coluna[COLUNA_CLUB],
-                    Eur_Release_Clause = _eur_Release_Clause, //Convert.ToDecimal(coluna[COLUNA_EUR_RELEASE_CLAUSE]),
-                    Birth_Date = Convert.ToDateTime(coluna[COLUNA_BIRTH_DATE]),
-                    Eur_Wage = _Eur_Wage, //Convert.ToDecimal(coluna[COLUNA_EUR_WAGE]),
-                    Age = _age //Convert.ToInt32(coluna[COLUNA_AGE])
-                });
+                    Club = coluna[COLUNA_CLUB]
+                };
+
+                #region Validações
+
+                if (int.TryParse(coluna[COLUNA_ID], out int _Id))
+                    player.Id = _Id;
+
+                if (int.TryParse(coluna[COLUNA_AGE], out int _Age))
+                    player.Age = _Age;
+
+                if (DateTime.TryParse(coluna[COLUNA_BIRTH_DATE], out DateTime _birth_Date))
+                    player.Birth_Date = _birth_Date;
+
+                if (!string.IsNullOrEmpty(coluna[COLUNA_EUR_RELEASE_CLAUSE]))
+                {
+                    string _Eur_Release_Clause = coluna[COLUNA_EUR_RELEASE_CLAUSE].Replace('.', ',');
+                    player.Eur_Release_Clause = Convert.ToDecimal(_Eur_Release_Clause);
+                }
+
+                if (!string.IsNullOrEmpty(coluna[COLUNA_EUR_RELEASE_CLAUSE]))
+                {
+                    string _Eur_Wage = coluna[COLUNA_EUR_WAGE].Replace('.', ',');
+                    player.Eur_Wage = Convert.ToDecimal(_Eur_Wage);
+                }
+                #endregion
+
+                ListFifaObject.Add(player);
             }
             stream.Close();
         }
@@ -101,33 +110,10 @@ namespace Codenation.Challenge
         // Deve se basear nas colunas colunas full_name e eur_release_clause do arquivo.
         public List<string> Top10PlayersByReleaseClause()
         {
-            //var listPlayers = ListFifaObject.OrderByDescending(x => x.Eur_Release_Clause).ToList();
-
-            var listPlayers = from p in ListFifaObject
-                              where p.Eur_Release_Clause > 0 
-                              orderby p.Eur_Release_Clause descending
-                              select p;
-
+            var listPlayers = ListFifaObject.OrderByDescending(x => x.Eur_Release_Clause).ToList();
             var listReturn = new List<string>();
-            //decimal playerEur_Release_Clause = -1;
             foreach (var item in listPlayers)
             {
-/*  
-                if (playerEur_Release_Clause == -1)
-                {
-                    playerEur_Release_Clause = item.Eur_Release_Clause;
-                    listReturn.Add(item.Full_Name);
-                }
-                else
-                {
-                    if (item.Eur_Release_Clause >= playerEur_Release_Clause)
-                    {
-                        playerEur_Release_Clause = item.Eur_Release_Clause;
-                        listReturn.Add(item.Full_Name);
-                    }
-                }
-*/
-
                 listReturn.Add(item.Full_Name);
             }
             return listReturn.Take(10).ToList();
@@ -152,7 +138,7 @@ namespace Codenation.Challenge
                 }
                 else
                 {
-                    if ((item.Birth_Date >= MaxBirthDate) && (item.Eur_Wage >= playerEur_Wage))
+                    if (item.Birth_Date >= MaxBirthDate)
                     {
                         playerEur_Wage = item.Eur_Wage;
                         MaxBirthDate = item.Birth_Date;
