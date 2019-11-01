@@ -3,9 +3,9 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 30%
+## Concluído: 36%
 
-#### Desafios de Código Completados: 4
+#### Desafios de Código Completados: 5
 #### Desafios de Conteúdo Completados: 15
 #### Média das Notas nos Desafios: 100%
 
@@ -57,8 +57,8 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
    - Score: 100%
    - Tentativas: 2
   - [ ] [Calculadora de Campos de Classe](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-6)
-   - Score: 0%
-   - Tentativas: 0
+   - Score: 100%
+   - Tentativas: 2
    
 ## Módulo 4
 - Modelagem de banco de dados relacional

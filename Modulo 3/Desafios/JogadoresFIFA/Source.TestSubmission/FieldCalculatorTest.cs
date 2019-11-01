@@ -76,7 +76,7 @@ namespace Codenation.Challenge
 
         [Theory]
         [InlineData(10, 10, 10, -10)]
-        //[InlineData(20, -20, 10, 20)]
+        [InlineData(20, -20, 10, 20)]
         public void Should_Returns_Subtraction_When_Calculate_Subtract_Attribute(
             decimal add, decimal subtract, decimal attributeless, decimal expected)
         {
