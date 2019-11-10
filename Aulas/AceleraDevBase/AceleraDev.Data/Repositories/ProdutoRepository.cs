@@ -2,6 +2,7 @@
 using AceleraDev.Data.Repositories.Base;
 using System.Collections.Generic;
 using AceleraDev.Domain.Repositories;
+using AceleraDev.Data.Repositories.Context;
 
 namespace AceleraDev.Data.Repositories
 {
@@ -9,16 +10,16 @@ namespace AceleraDev.Data.Repositories
     /// Classe Produto Repository
     /// </summary>
     public class ProdutoRepository: RepositoryBase<Produto>, IProdutoRepository{
-        public ProdutoRepository()
+        public ProdutoRepository(AceleraDevContext context) : base(context)
         {
-            base._mock = new List<Produto>
-            {
-                new Produto
-                {
-                    Descricao = "Produto",
-                    Valor = 25
-                }
-            };
+            //base._mock = new List<Produto>
+            //{
+            //    new Produto
+            //    {
+            //        Descricao = "Produto",
+            //        Valor = 25
+            //    }
+            //};
         }
     }
 }

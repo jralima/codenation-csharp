@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_AceleraDevBase.-1301764095.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/16.2.0/build/netcoreapp1.0" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="1 - Presentation" t="Include" />
+      <e p="2 - Application" t="Include" />
+      <e p="3 - Domain" t="Include" />
+      <e p="4 - Infra" t="Include" />
+      <e p="AceleraDev.Application" t="IncludeRecursive">
+        <e p="AceleraDev.Application.csproj" t="IncludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="IClienteAppService.cs" t="Include" />
+          <e p="IPedidoAppService.cs" t="Include" />
+          <e p="IProdutoAppService.cs" t="Include" />
+        </e>
+        <e p="Mapping" t="Include">
+          <e p="AutoMappingDomainToViewModel.cs" t="Include" />
+          <e p="AutoMappingViewModelToDomain.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="ClienteAppService.cs" t="Include" />
+          <e p="PedidoAppService.cs" t="Include" />
+          <e p="ProdutoAppService.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="Base" t="Include">
+            <e p="ViewModelBase.cs" t="Include" />
+          </e>
+          <e p="ClienteViewModel.cs" t="Include" />
+          <e p="PedidoViewModel.cs" t="Include" />
+          <e p="ProdutoViewModel.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDev.Application.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDev.ConsoleApp" t="IncludeRecursive">
+        <e p="AceleraDev.ConsoleApp.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDev.ConsoleApp.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDev.CrossCutting" t="IncludeRecursive">
+        <e p="AceleraDev.CrossCutting.csproj" t="IncludeRecursive" />
+        <e p="Exceptions" t="Include">
+          <e p="ModelValidationException.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDev.CrossCutting.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDev.Data" t="IncludeRecursive">
+        <e p="AceleraDev.Data.csproj" t="IncludeRecursive" />
+        <e p="Repositories" t="Include">
+          <e p="Base" t="Include">
+            <e p="RepositoryBase.cs" t="Include" />
+          </e>
+          <e p="ClienteRepository.cs" t="Include" />
+          <e p="PedidoRepository.cs" t="Include" />
+          <e p="ProdutoRepository.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDev.Data.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDev.Domain" t="IncludeRecursive">
+        <e p="AceleraDev.Domain.csproj" t="IncludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="Base" t="Include">
+            <e p="IRepositoryBase.cs" t="Include" />
+            <e p="IServiceBase.cs" t="Include" />
+          </e>
+          <e p="Repositories" t="Include">
+            <e p="IClienteRepository.cs" t="Include" />
+            <e p="IEnderecoRepository.cs" t="Include" />
+            <e p="IPedidoRepository.cs" t="Include" />
+            <e p="IProdutoRepository.cs" t="Include" />
+          </e>
+          <e p="Services" t="Include">
+            <e p="IClienteService.cs" t="Include" />
+            <e p="IPeditoService.cs" t="Include" />
+            <e p="IProdutoService.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Models" t="Include">
+          <e p="Base" t="Include">
+            <e p="ModelBase.cs" t="Include" />
+          </e>
+          <e p="Cliente.cs" t="Include" />
+          <e p="Endereco.cs" t="Include" />
+          <e p="Pedido.cs" t="Include" />
+          <e p="PedidoItem.cs" t="Include" />
+          <e p="Produto.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="Base" t="Include">
+            <e p="ServiceBase.cs" t="Include" />
+          </e>
+          <e p="ClienteService.cs" t="Include" />
+          <e p="PedidoService.cs" t="Include" />
+          <e p="ProdutoService.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDev.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDev.Domain.Test" t="IncludeRecursive">
+        <e p="AceleraDev.Domain.Test.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDev.Domain.Test.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDevBase.Api" t="IncludeRecursive">
+        <e p="AceleraDevBase.Api.csproj" t="IncludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="ClienteController.cs" t="Include" />
+          <e p="PedidoController.cs" t="Include" />
+          <e p="ProdutoController.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDevBase.Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDevBase.CrossCutting.IoC" t="IncludeRecursive">
+        <e p="AceleraDevBase.CrossCutting.IoC.csproj" t="IncludeRecursive" />
+        <e p="RegisterIoC.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="AceleraDevBase.CrossCutting.IoC.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AceleraDevBase.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

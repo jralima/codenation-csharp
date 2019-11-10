@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using AceleraDev.Application.Mapping;
 using AutoMapper;
 using AceleraDevBase.CrossCutting.IoC;
+using AceleraDev.Data.Repositories.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace AceleraDevBase.Api
 {
@@ -36,6 +38,9 @@ namespace AceleraDevBase.Api
             // Configuração do AutoMapper
             services.AddAutoMapper(typeof(AutoMappingDomainToViewModel));
             services.AddAutoMapper(typeof(AutoMappingViewModelToDomain));
+
+            // Configurando o EntityFramework
+            services.AddDbContext<AceleraDevContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
         }
 

@@ -3,10 +3,10 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 36%
+## Concluído: 44%
 
-#### Desafios de Código Completados: 5
-#### Desafios de Conteúdo Completados: 15
+#### Desafios de Código Completados: 6
+#### Desafios de Conteúdo Completados: 20
 #### Média das Notas nos Desafios: 100%
 
 ## Módulo 1 
@@ -56,7 +56,7 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
   - [X] [Processe dados dos jogadores do FIFA© 2017](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-4)
    - Score: 100%
    - Tentativas: 2
-  - [ ] [Calculadora de Campos de Classe](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-6)
+  - [X] [Calculadora de Campos de Classe](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-6)
    - Score: 100%
    - Tentativas: 2
    
@@ -66,9 +66,14 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Criar banco de dados
 - Modelagem do banco
 - Atividades:
-  - 
+  - [Cursos da formação .NET | Alura] (https://www.alura.com.br/formacao-dotnet)
+  - [Visão geral do Entity Framework Core – EF Core] (https://docs.microsoft.com/pt-br/ef/core/)
+  - [Criar e configurar um modelo – EF Core] (https://docs.microsoft.com/pt-br/ef/core/modeling/)
+  - [Entity Framework Core Tutorials] (https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx)
+  - [LocalDb – Uma alternativa simples e rápida] (https://codigoecafe.com/2013/03/12/localdb-uma-alternativa-simples-e-rapida/)
+  - [Feedback semanal] (https://docs.google.com/forms/d/e/1FAIpQLSflgmua64bKv8W7HGSPOwUw22eNVGuA6oo4kTbKTIgy8MuGgA/viewform)
 - Desafios:
-  - [ ] 
+  - [ ] [Criando Entidades de Banco de Dados com C#] (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-7)
    - Score: 0%
 
 ## Módulo 5

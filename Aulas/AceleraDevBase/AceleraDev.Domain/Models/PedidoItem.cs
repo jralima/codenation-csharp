@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AceleraDev.Domain.Models.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,17 +10,21 @@ namespace AceleraDev.Domain.Models
     /// </summary>
     public class PedidoItem
     {
-        public Produto Produto { get; set; }
+        public Guid PedidoId { get; set; }
+        public Guid ProdutoId { get; set; }
+        public virtual Pedido Pedido { get; set; }
+        public virtual Produto Produto { get; set; }
         public int Quantidade { get; set; }
+        public decimal ValorItem { get; set; }
         public decimal ValorTotalItem
         {
             get
             {
                 decimal valorRetorno = 0;
-                if(Quantidade > 0) 
-                { 
-                    valorRetorno = Quantidade * Produto.Valor; 
-                }
+                if (Quantidade == 0)
+                    return valorRetorno;
+
+                valorRetorno = Quantidade * ValorItem;
                 return valorRetorno;
             }
         }

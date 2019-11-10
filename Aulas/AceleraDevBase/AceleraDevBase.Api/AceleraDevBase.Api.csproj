@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AceleraDev.Application\AceleraDev.Application.csproj" />
-    <ProjectReference Include="..\AceleraDevBase.CrossCutting.IoC\AceleraDevBase.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\AceleraDevBase.CrossCutting.IoC\AceleraDev.CrossCutting.IoC.csproj" />
   </ItemGroup>
 
 </Project>

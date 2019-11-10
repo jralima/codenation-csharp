@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AceleraDev.Application", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AceleraDevBase.Api", "AceleraDevBase.Api\AceleraDevBase.Api.csproj", "{41754E21-1751-475E-BB2A-6AA755E23F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AceleraDevBase.CrossCutting.IoC", "AceleraDevBase.CrossCutting.IoC\AceleraDevBase.CrossCutting.IoC.csproj", "{B3596996-06A8-4C01-89C6-B2F5F9A29786}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AceleraDev.CrossCutting.IoC", "AceleraDevBase.CrossCutting.IoC\AceleraDev.CrossCutting.IoC.csproj", "{B3596996-06A8-4C01-89C6-B2F5F9A29786}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
