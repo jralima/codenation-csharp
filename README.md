@@ -48,7 +48,7 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Hierarquia
 - Interfaces
 - Atividades:
-  - [C# – Lendo e escrevendo em arquivos textos](StreamReader/StreamWriter) (https://imasters.com.br/back-end/c-lendo-e-escrevendo-em-arquivos-textos-streamreaderstreamwriter)
+  - [C# – Lendo e escrevendo em arquivos textos(StreamReader/StreamWriter)] (https://imasters.com.br/back-end/c-lendo-e-escrevendo-em-arquivos-textos-streamreaderstreamwriter)
   - [Estendendo metadados por meio de atributos](https://docs.microsoft.com/pt-br/dotnet/standard/attributes/)
   - [Reflexão no .NET](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/reflection)
   - [Acessando atributos personalizados](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/accessing-custom-attributes)
