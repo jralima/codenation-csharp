@@ -3,9 +3,9 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 44%
+## Concluído: 45%
 
-#### Desafios de Código Completados: 6
+#### Desafios de Código Completados: 7
 #### Desafios de Conteúdo Completados: 20
 #### Média das Notas nos Desafios: 100%
 
@@ -73,9 +73,10 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
   - [LocalDb – Uma alternativa simples e rápida] (https://codigoecafe.com/2013/03/12/localdb-uma-alternativa-simples-e-rapida/)
   - [Feedback semanal] (https://docs.google.com/forms/d/e/1FAIpQLSflgmua64bKv8W7HGSPOwUw22eNVGuA6oo4kTbKTIgy8MuGgA/viewform)
 - Desafios:
-  - [ ] [Criando Entidades de Banco de Dados com C#] (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-7)
-   - Score: 0%
-
+  - [X] [Criando Entidades de Banco de Dados com C#] (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-7)
+   - Score: 100%
+   - Tentativas: 2
+   
 ## Módulo 5
 - Manipulação de dados em bancos de dados relacionais
 - Select
