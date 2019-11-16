@@ -8,14 +8,16 @@ namespace AceleraDev.Domain.Services
 {
     public class ClienteService : ServiceBase<Cliente>, IClienteService
     {
+        protected readonly IClienteRepository _clienteRespository;
         public ClienteService(IClienteRepository clienteRepository) 
             : base(clienteRepository)
         {
+            _clienteRespository = clienteRepository;
         }
 
         public List<Cliente> BuscarTop10()
         {
-            throw new System.NotImplementedException();
+            return _clienteRespository.BuscarTop10();
         }
     }
 }

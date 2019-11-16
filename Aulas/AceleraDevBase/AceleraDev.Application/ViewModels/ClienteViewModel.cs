@@ -13,6 +13,7 @@ namespace AceleraDev.Application.ViewModels
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public DateTime? DataNascimento { get; set; }
-        public List<string> Telefones { get; set; }
+        public List<TelefoneViewModel> Telefones { get; set; }
+        public List<EnderecoViewModel> Enderecos { get; set; }
     }
 }

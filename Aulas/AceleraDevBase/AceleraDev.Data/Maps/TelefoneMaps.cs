@@ -15,6 +15,8 @@ namespace AceleraDev.Data.Maps
             builder.Property(p => p.DDI).HasMaxLength(3);
             builder.Property(p => p.DDD).HasMaxLength(3).IsRequired();
             builder.Property(p => p.Numero).HasMaxLength(9).IsRequired();
+
+            builder.HasOne(p => p.Cliente).WithMany(p => p.Telefones).HasForeignKey(p => p.ClienteId);
         }
     }
 }

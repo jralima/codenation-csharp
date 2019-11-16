@@ -15,6 +15,8 @@ namespace AceleraDev.Data.Maps
             builder.Property(p => p.Bairro).HasMaxLength(100);
 
             builder.Property(p => p.Cep).HasMaxLength(10);
+
+            builder.HasOne(p => p.Cliente).WithMany(p => p.Enderecos).HasForeignKey(p => p.ClienteId);
         }
     }
 }

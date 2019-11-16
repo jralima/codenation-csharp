@@ -1,20 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using AceleraDev.Application.Mapping;
 using AutoMapper;
 using AceleraDevBase.CrossCutting.IoC;
 using AceleraDev.Data.Repositories.Context;
 using Microsoft.EntityFrameworkCore;
+using AceleraDev.Data.Repositories.Base;
 
 namespace AceleraDevBase.Api
 {
@@ -30,7 +24,9 @@ namespace AceleraDevBase.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                // Desabilitar referência ciricular na serialização dos JSON
+                .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // Configuração da injeção de dependências
             RegisterIoC.Register(services);
@@ -39,8 +35,11 @@ namespace AceleraDevBase.Api
             services.AddAutoMapper(typeof(AutoMappingDomainToViewModel));
             services.AddAutoMapper(typeof(AutoMappingViewModelToDomain));
 
-            // Configurando o EntityFramework
+            // Configurando o EntityFramework (SQL SERVER)
             services.AddDbContext<AceleraDevContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // Configuração do mongoDb
+            MongoDbContext.ConnectionString = Configuration.GetConnectionString("mongoAtlas");
 
         }
 

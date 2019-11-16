@@ -11,6 +11,7 @@ namespace AceleraDev.Data.Maps
             builder.ToTable("produto");
 
             builder.HasKey(p => p.Id);
+            builder.HasMany(p => p.Itens).WithOne(p => p.Produto).HasForeignKey(p => p.ProdutoId);
         }
     }
 }

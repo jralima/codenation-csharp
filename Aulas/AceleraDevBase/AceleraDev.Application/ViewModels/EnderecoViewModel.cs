@@ -1,12 +1,10 @@
-﻿using AceleraDev.Domain.Models.Base;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace AceleraDev.Domain.Models
+namespace AceleraDev.Application.ViewModels
 {
-    /// <summary>
-    /// Classe de endereço do cliente
-    /// </summary>
-    public class Endereco : ModelBase
+    public class EnderecoViewModel
     {
         public string Cep { get; set; }
         public string Rua { get; set; }
@@ -16,6 +14,6 @@ namespace AceleraDev.Domain.Models
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public Guid ClienteId { get; set; }
-        public virtual Cliente Cliente { get; set; }
+        public ClienteViewModel Cliente { get; set; }
     }
 }

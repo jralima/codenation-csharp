@@ -1,4 +1,5 @@
 ﻿using AceleraDev.Domain.Models.Base;
+using System.Collections.Generic;
 
 namespace AceleraDev.Domain.Models
 {
@@ -9,5 +10,6 @@ namespace AceleraDev.Domain.Models
     {
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
+        public virtual List<PedidoItem> Itens { get; set; }
     }
 }

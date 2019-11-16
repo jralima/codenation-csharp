@@ -15,6 +15,8 @@ namespace AceleraDev.Data.Maps
             builder.Property(p => p.Cpf).HasMaxLength(11).IsRequired();
             builder.Property(p => p.Nome).IsRequired();
             builder.Property(p => p.Sobrenome).IsRequired();
+            builder.HasMany(p => p.Telefones).WithOne(p => p.Cliente).HasForeignKey(p => p.ClienteId);
+            builder.HasMany(p => p.Enderecos).WithOne(p => p.Cliente).HasForeignKey(p => p.ClienteId);
 
             //builder.Property(p => p.Ativo).HasColumnType("char").HasMaxLength(1).HasDefaultValue("S");
         }

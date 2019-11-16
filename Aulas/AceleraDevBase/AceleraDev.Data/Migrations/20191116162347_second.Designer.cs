@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AceleraDev.Data.Migrations
 {
     [DbContext(typeof(AceleraDevContext))]
-    [Migration("20191109170124_initial")]
-    partial class initial
+    [Migration("20191116162347_second")]
+    partial class second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,7 +83,7 @@ namespace AceleraDev.Data.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
-                    b.Property<Guid?>("ClienteId")
+                    b.Property<Guid>("ClienteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Complemento")
@@ -123,7 +123,7 @@ namespace AceleraDev.Data.Migrations
                     b.Property<DateTime>("AtualizadoEm")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ClienteId")
+                    b.Property<Guid>("ClienteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CriadoEm")
@@ -149,6 +149,9 @@ namespace AceleraDev.Data.Migrations
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("ValorItem")
+                        .HasColumnType("decimal(18, 4)");
 
                     b.HasKey("PedidoId", "ProdutoId");
 
@@ -196,7 +199,7 @@ namespace AceleraDev.Data.Migrations
                     b.Property<DateTime>("AtualizadoEm")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ClienteId")
+                    b.Property<Guid>("ClienteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Contato")
@@ -229,16 +232,20 @@ namespace AceleraDev.Data.Migrations
 
             modelBuilder.Entity("AceleraDev.Domain.Models.Endereco", b =>
                 {
-                    b.HasOne("AceleraDev.Domain.Models.Cliente", null)
+                    b.HasOne("AceleraDev.Domain.Models.Cliente", "Cliente")
                         .WithMany("Enderecos")
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AceleraDev.Domain.Models.Pedido", b =>
                 {
                     b.HasOne("AceleraDev.Domain.Models.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AceleraDev.Domain.Models.PedidoItem", b =>
@@ -250,7 +257,7 @@ namespace AceleraDev.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("AceleraDev.Domain.Models.Produto", "Produto")
-                        .WithMany()
+                        .WithMany("Itens")
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -258,9 +265,11 @@ namespace AceleraDev.Data.Migrations
 
             modelBuilder.Entity("AceleraDev.Domain.Models.Telefone", b =>
                 {
-                    b.HasOne("AceleraDev.Domain.Models.Cliente", null)
+                    b.HasOne("AceleraDev.Domain.Models.Cliente", "Cliente")
                         .WithMany("Telefones")
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

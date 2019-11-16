@@ -11,8 +11,9 @@ namespace AceleraDev.Domain.Models
     public class Pedido : ModelBase
     {
         public long Numero { get; set; }
-        public Cliente Cliente { get; set; }
-        public List<PedidoItem> Itens { get; set; }
+        public Guid ClienteId { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual List<PedidoItem> Itens { get; set; }
 
         public decimal ValorTotal
         {

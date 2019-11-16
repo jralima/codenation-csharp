@@ -1,5 +1,6 @@
 ﻿using AceleraDev.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace AceleraDev.Data.Repositories.Context
 {
     public class AceleraDevContext : DbContext
     {
-        public AceleraDevContext(DbContextOptions options)
+        private readonly IConfiguration _configuration;
+        public AceleraDevContext(DbContextOptions options, IConfiguration configuration)
             : base(options)
-        {            
+        {
+            _configuration = configuration;
         }
 
         public DbSet<Cliente> Clientes { get; set; }
@@ -19,7 +22,7 @@ namespace AceleraDev.Data.Repositories.Context
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<PedidoItem> PedidoItens { get; set; }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(t => t.GetProperties()).Where(p => p.ClrType == typeof(string)))
@@ -36,6 +39,19 @@ namespace AceleraDev.Data.Repositories.Context
             
             //Incluíndo no momento de criar a tabela (como se fosse um script "base")
             //modelBuilder.Entity<Cliente>().HasData(new Cliente { Nome = "Lacerda"});
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            // Ativando o Lazy Loading
+            optionsBuilder.UseLazyLoadingProxies();
+        }
+
+        internal string GetConnectionString()
+        {
+            return _configuration.GetConnectionString("DefaultConnection");
         }
     }
 }

@@ -56,7 +56,7 @@ namespace AceleraDev.Data.Migrations
                     Complemento = table.Column<string>(maxLength: 255, nullable: true),
                     Cidade = table.Column<string>(maxLength: 255, nullable: true),
                     Estado = table.Column<string>(maxLength: 255, nullable: true),
-                    ClienteId = table.Column<Guid>(nullable: true)
+                    ClienteId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -66,7 +66,7 @@ namespace AceleraDev.Data.Migrations
                         column: x => x.ClienteId,
                         principalTable: "cliente",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -103,7 +103,7 @@ namespace AceleraDev.Data.Migrations
                     DDD = table.Column<string>(maxLength: 3, nullable: false),
                     Numero = table.Column<string>(maxLength: 9, nullable: false),
                     Contato = table.Column<string>(maxLength: 255, nullable: true),
-                    ClienteId = table.Column<Guid>(nullable: true)
+                    ClienteId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -113,7 +113,7 @@ namespace AceleraDev.Data.Migrations
                         column: x => x.ClienteId,
                         principalTable: "cliente",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -122,7 +122,8 @@ namespace AceleraDev.Data.Migrations
                 {
                     PedidoId = table.Column<Guid>(nullable: false),
                     ProdutoId = table.Column<Guid>(nullable: false),
-                    Quantidade = table.Column<int>(nullable: false)
+                    Quantidade = table.Column<int>(nullable: false),
+                    ValorItem = table.Column<decimal>(type: "decimal(18, 4)", nullable: false)
                 },
                 constraints: table =>
                 {

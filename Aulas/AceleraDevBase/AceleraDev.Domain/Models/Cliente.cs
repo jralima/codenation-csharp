@@ -18,8 +18,8 @@ namespace AceleraDev.Domain.Models
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public DateTime? DataNascimento { get; set; }
-        public List<Telefone> Telefones { get; set; }
-        public List<Endereco> Enderecos { get; set; }
+        public virtual List<Telefone> Telefones { get; set; }
+        public virtual List<Endereco> Enderecos { get; set; }
 
         public bool Valido()
         {

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using AceleraDev.Domain.Repositories;
 using AceleraDev.Data.Repositories.Context;
 using System.Linq;
+using Microsoft.Data.SqlClient;
+using System;
+using Dapper;
 
 namespace AceleraDev.Data.Repositories
 {
@@ -29,7 +32,40 @@ namespace AceleraDev.Data.Repositories
 
         public List<Cliente> BuscarTop10()
         {
-            return _context.Clientes.Take(10).ToList();
+            //return _context.Clientes.Take(10).ToList();
+            // Executando a consulta com o Dapper
+
+            //return base.GetWithDapper("select top 10 * from cliente");
+
+            //using (var con = new SqlConnection(_context.GetConnectionString()))
+            using var con = new SqlConnection(_context.GetConnectionString());
+            try
+            {
+                var query = @"select * from cliente c 
+                              join endereco e on c.id = e.ClienteId";
+                object param = new object();
+
+                con.Open();
+                return con.Query<Cliente>(query, param).ToList();
+
+                //return con.Query<Cliente, Endereco, Cliente>(query, 
+                //    (cli, end) =>
+                //    {
+                //        cli.Enderecos = new List<Endereco> { end };
+                //        return cli;
+                //    }, splitOn:""
+                //    ).ToList();
+            }
+            catch (Exception ex)
+            {
+                //throw ex;
+                throw new Exception("Ocorreu um erro ao executar uma pesquisa com Dapper.", ex);
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
     }
 }

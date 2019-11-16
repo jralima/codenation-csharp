@@ -20,8 +20,36 @@ namespace AceleraDevBase.Api.Controllers
         [HttpGet]
         public IEnumerable<ClienteViewModel> Get()
         {
+            var end = new EnderecoViewModel
+            {
+                Cep = "88058580",
+                Rua = "Rua Abel",
+                Numero = 503
+
+            };
+            var endDois = new EnderecoViewModel
+            {
+                Cep = "88058580",
+                Rua = "Rua Teste",
+                Numero = 503
+
+            };
+
+            var clienteUm = new ClienteViewModel
+            {
+                Nome = "Lacerda",
+                Sobrenome = "Junior 5",
+                Cpf = "08404568758",
+                DataNascimento = new DateTime(1981, 04, 16),
+                //Enderecos = new List<EnderecoViewModel> { end, endDois }
+            };
+
+            //_clienteAppService.Add(clienteUm);
+
             //_clienteAppService.Add(new ClienteViewModel { Nome = "Lacerda", Sobrenome = "Lima", Cpf="1234567890" });
             return _clienteAppService.GetAll();
+
+            //return _clienteAppService.BuscarTop10();
         }
 
         // GET: api/cliente/id

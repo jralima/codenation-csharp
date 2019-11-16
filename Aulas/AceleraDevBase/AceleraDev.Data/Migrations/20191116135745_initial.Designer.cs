@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AceleraDev.Data.Migrations
 {
     [DbContext(typeof(AceleraDevContext))]
-    [Migration("20191109172229_ajuste_itempedido")]
-    partial class ajuste_itempedido
+    [Migration("20191116135745_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,7 +83,7 @@ namespace AceleraDev.Data.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
 
-                    b.Property<Guid?>("ClienteId")
+                    b.Property<Guid>("ClienteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Complemento")
@@ -199,7 +199,7 @@ namespace AceleraDev.Data.Migrations
                     b.Property<DateTime>("AtualizadoEm")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ClienteId")
+                    b.Property<Guid>("ClienteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Contato")
@@ -232,9 +232,11 @@ namespace AceleraDev.Data.Migrations
 
             modelBuilder.Entity("AceleraDev.Domain.Models.Endereco", b =>
                 {
-                    b.HasOne("AceleraDev.Domain.Models.Cliente", null)
+                    b.HasOne("AceleraDev.Domain.Models.Cliente", "Cliente")
                         .WithMany("Enderecos")
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AceleraDev.Domain.Models.Pedido", b =>
@@ -261,9 +263,11 @@ namespace AceleraDev.Data.Migrations
 
             modelBuilder.Entity("AceleraDev.Domain.Models.Telefone", b =>
                 {
-                    b.HasOne("AceleraDev.Domain.Models.Cliente", null)
+                    b.HasOne("AceleraDev.Domain.Models.Cliente", "Cliente")
                         .WithMany("Telefones")
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
