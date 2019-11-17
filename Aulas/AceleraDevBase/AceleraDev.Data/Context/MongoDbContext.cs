@@ -3,7 +3,7 @@ using MongoDB.Driver;
 using System;
 using System.Security.Authentication;
 
-namespace AceleraDev.Data.Repositories.Base
+namespace AceleraDev.Data.Context
 {
     public class MongoDbContext
     {

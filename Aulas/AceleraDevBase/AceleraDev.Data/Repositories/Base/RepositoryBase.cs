@@ -1,5 +1,5 @@
 ﻿using AceleraDev.Data.Auditoria;
-using AceleraDev.Data.Repositories.Context;
+using AceleraDev.Data.Context;
 using AceleraDev.Domain.Interfaces.Base;
 using AceleraDev.Domain.Models.Base;
 using Dapper;

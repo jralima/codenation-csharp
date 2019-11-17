@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AceleraDev.Data.Repositories.Context
+namespace AceleraDev.Data.Context
 {
     public class AceleraDevContext : DbContext
     {

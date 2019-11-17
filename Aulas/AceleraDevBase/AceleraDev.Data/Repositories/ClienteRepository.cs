@@ -2,7 +2,7 @@
 using AceleraDev.Data.Repositories.Base;
 using System.Collections.Generic;
 using AceleraDev.Domain.Repositories;
-using AceleraDev.Data.Repositories.Context;
+using AceleraDev.Data.Context;
 using System.Linq;
 using Microsoft.Data.SqlClient;
 using System;

@@ -6,9 +6,8 @@ using Microsoft.Extensions.Hosting;
 using AceleraDev.Application.Mapping;
 using AutoMapper;
 using AceleraDevBase.CrossCutting.IoC;
-using AceleraDev.Data.Repositories.Context;
+using AceleraDev.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using AceleraDev.Data.Repositories.Base;
 
 namespace AceleraDevBase.Api
 {

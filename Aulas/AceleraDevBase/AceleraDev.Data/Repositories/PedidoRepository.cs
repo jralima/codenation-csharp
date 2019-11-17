@@ -1,7 +1,7 @@
 ﻿using AceleraDev.Domain.Models;
 using AceleraDev.Data.Repositories.Base;
 using AceleraDev.Domain.Repositories;
-using AceleraDev.Data.Repositories.Context;
+using AceleraDev.Data.Context;
 
 namespace AceleraDev.Data.Repositories
 {
