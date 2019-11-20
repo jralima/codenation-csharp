@@ -3,11 +3,12 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 45%
+## Concluído: 54%
 
-#### Desafios de Código Completados: 7
-#### Desafios de Conteúdo Completados: 20
+#### Desafios de Código Completados: 8
+#### Desafios de Conteúdo Completados: 25
 #### Média das Notas nos Desafios: 100%
+#### CSharp - 12 módulos:
 
 ## Módulo 1 
 - Programação I
@@ -48,7 +49,7 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Hierarquia
 - Interfaces
 - Atividades:
-  - [C# – Lendo e escrevendo em arquivos textos(StreamReader/StreamWriter)] (https://imasters.com.br/back-end/c-lendo-e-escrevendo-em-arquivos-textos-streamreaderstreamwriter)
+  - [C# – Lendo e escrevendo em arquivos textos(StreamReader/StreamWriter)](https://imasters.com.br/back-end/c-lendo-e-escrevendo-em-arquivos-textos-streamreaderstreamwriter)
   - [Estendendo metadados por meio de atributos](https://docs.microsoft.com/pt-br/dotnet/standard/attributes/)
   - [Reflexão no .NET](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/reflection)
   - [Acessando atributos personalizados](https://docs.microsoft.com/pt-br/dotnet/framework/reflection-and-codedom/accessing-custom-attributes)
@@ -66,14 +67,14 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Criar banco de dados
 - Modelagem do banco
 - Atividades:
-  - [Cursos da formação .NET | Alura] (https://www.alura.com.br/formacao-dotnet)
-  - [Visão geral do Entity Framework Core – EF Core] (https://docs.microsoft.com/pt-br/ef/core/)
-  - [Criar e configurar um modelo – EF Core] (https://docs.microsoft.com/pt-br/ef/core/modeling/)
-  - [Entity Framework Core Tutorials] (https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx)
-  - [LocalDb – Uma alternativa simples e rápida] (https://codigoecafe.com/2013/03/12/localdb-uma-alternativa-simples-e-rapida/)
-  - [Feedback semanal] (https://docs.google.com/forms/d/e/1FAIpQLSflgmua64bKv8W7HGSPOwUw22eNVGuA6oo4kTbKTIgy8MuGgA/viewform)
+  - [Cursos da formação .NET | Alura](https://www.alura.com.br/formacao-dotnet)
+  - [Visão geral do Entity Framework Core – EF Core](https://docs.microsoft.com/pt-br/ef/core/)
+  - [Criar e configurar um modelo – EF Core](https://docs.microsoft.com/pt-br/ef/core/modeling/)
+  - [Entity Framework Core Tutorials](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx)
+  - [LocalDb – Uma alternativa simples e rápida](https://codigoecafe.com/2013/03/12/localdb-uma-alternativa-simples-e-rapida/)
+  - [Feedback semanal](https://docs.google.com/forms/d/e/1FAIpQLSflgmua64bKv8W7HGSPOwUw22eNVGuA6oo4kTbKTIgy8MuGgA/viewform)
 - Desafios:
-  - [X] [Criando Entidades de Banco de Dados com C#] (https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-7)
+  - [X] [Criando Entidades de Banco de Dados com C#](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-7)
    - Score: 100%
    - Tentativas: 2
    
@@ -86,11 +87,18 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Uso de ORMs 
 - Frameworks da linguagem
 - Atividades:
-  - 
+  - [Entity Framework Core Tutorials](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx)
+  - [Visão geral do Entity Framework Core – EF Core](https://docs.microsoft.com/pt-br/ef/core/)
+  - [ASP.NET Core MVC com EF Core – série de tutoriais](https://docs.microsoft.com/pt-br/aspnet/core/data/ef-mvc/?view=aspnetcore-2.2)
+  - [Tutorial: criar uma API Web com ASP.NET Core](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.2&tabs=visual-studio)
+  - [LocalDb – Uma alternativa simples e rápida](https://codigoecafe.com/2013/03/12/localdb-uma-alternativa-simples-e-rapida/)
+  - [Test components using EF Core - EF Core](https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/)
+  - [Mocking DbContext and DbSet with Moq](https://www.jankowskimichal.pl/en/2016/01/mocking-dbcontext-and-dbset-with-moq/)
+  - [Testing with a mocking framework - EF6](https://docs.microsoft.com/en-us/ef/ef6/fundamentals/testing/mocking)
 - Desafios:
-  - [ ] 
-   - Score: 0%
-   - Tentativas: 0
+  - [X] [Criando e manipulando entidades no Banco de dados com Entity Framework Core](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-8)
+   - Score: 100%
+   - Tentativas: 2
 
 ## Módulo 6
 - Criação de APIs Rest

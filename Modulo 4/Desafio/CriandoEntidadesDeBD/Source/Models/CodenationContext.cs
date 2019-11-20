@@ -1,34 +1,31 @@
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
-
 
 namespace Codenation.Challenge.Models
 {
     public class CodenationContext : DbContext
     {
         public DbSet<Company> Companies { get; set; }
-        public DbSet<Submission> Submissions { get; set; }
-        public DbSet<Acceleration> Accelerations { get; set; }
         public DbSet<Candidate> Candidates { get; set; }
+        public DbSet<Submission> Submissions { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Challenge> Challenges { get; set; }
-
+        public DbSet<Challenge> Challenge { get; set; }
+        public DbSet<Acceleration> Accelerations { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Codenation;Trusted_Connection=True");
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasMany(c => c.Candidates).WithOne(e => e.User).IsRequired();
-            modelBuilder.Entity<User>().HasMany(c => c.Submissions).WithOne(e => e.User).IsRequired();
-            modelBuilder.Entity<Challenge>().HasMany(c => c.Submissions).WithOne(e => e.Challenge).IsRequired();
-            modelBuilder.Entity<Challenge>().HasMany(c => c.Accelerations).WithOne(e => e.Challenge).IsRequired();
-            modelBuilder.Entity<Company>().HasMany(c => c.Candidates).WithOne(e => e.Company).IsRequired();
-            modelBuilder.Entity<Acceleration>().HasMany(c => c.Candidates).WithOne(e => e.Acceleration).IsRequired(); 
+            foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(t => t.GetProperties()).Where(p => p.ClrType == typeof(string)))
+            {
+                if (property.GetMaxLength() == null) property.SetMaxLength(100);
+            }
 
-            modelBuilder.Entity<Candidate>().HasKey(c => new { c.UserId, c.AccelerationId, c.CompanyId });//chave composta
-            modelBuilder.Entity<Submission>().HasKey(c => new { c.UserId,c.ChallengeId });//chave composta
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CodenationContext).Assembly);
         }
     }
 }
