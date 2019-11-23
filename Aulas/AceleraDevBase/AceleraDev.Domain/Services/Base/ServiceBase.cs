@@ -19,9 +19,9 @@ namespace AceleraDev.Domain.Repositories.Base
         /// Método para incluir
         /// </summary>
         /// <param name="obj">Registro a ser inlcuído</param>
-        public void Add(TModel obj)
+        public TModel Add(TModel obj)
         {
-            _repositoryBase.Add(obj);
+            return _repositoryBase.Add(obj);
         }
 
         /// <summary>

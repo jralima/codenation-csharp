@@ -19,10 +19,13 @@ namespace AceleraDev.Application.Services
             _mapper = mapper;
         }
         
-        public void Add(ClienteViewModel clienteViewModel)
+        public ClienteViewModel Add(ClienteViewModel clienteViewModel)
         {
             var modelCliente = _mapper.Map<Cliente>(clienteViewModel);
-            _clienteService.Add(modelCliente);
+            var cliente = _clienteService.Add(modelCliente);
+            var result = _mapper.Map<ClienteViewModel>(cliente);
+
+            return result;
         }
 
         public void Update(ClienteViewModel clienteViewModel)

@@ -30,8 +30,8 @@ namespace AceleraDev.Data.Repositories.Base
         /// <summary>
         /// Método para incluir
         /// </summary>
-        /// <param name="obj">Registro a ser inlcuído</param>
-        public void Add(TModel obj)
+        /// <param name="obj">Registro a ser inlcuído</param>   
+        public TModel Add(TModel obj)
         {
             obj.Id = Guid.NewGuid();
             obj.CriadoEm = obj.AtualizadoEm = DateTime.Now;
@@ -42,6 +42,8 @@ namespace AceleraDev.Data.Repositories.Base
             //_mock.Add(obj);
 
             IncluirAuditoria("Add", obj.Id.Value);
+
+            return obj;
         }
 
         /// <summary>

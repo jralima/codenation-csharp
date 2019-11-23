@@ -13,6 +13,6 @@ namespace Codenation.Challenge.DTOs
         [Required]
         public decimal Score { get; set; }
         [Required]
-        public DateTime CreateAt { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace AceleraDev.Application.Mapping
             CreateMap<Produto, ProdutoViewModel>();
             CreateMap<Pedido, PedidoViewModel>();
             CreateMap<Endereco, EnderecoViewModel>();
+            CreateMap<Telefone, TelefoneViewModel>();
             //CreateMap<PedidoItem, PedidoItemViewModel>();
         }
     }

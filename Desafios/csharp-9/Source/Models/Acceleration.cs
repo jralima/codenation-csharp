@@ -28,9 +28,9 @@ namespace Codenation.Challenge.Models
         [ForeignKey("ChallengeId")]
         public virtual Challenge Challenge { get; set; }
 
-        [Column("create_at")]
+        [Column("created_at")]
         [Required]
-        public DateTime CreateAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         public virtual ICollection<Candidate> Candidates { get; set; }        
 

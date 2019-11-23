@@ -23,9 +23,9 @@ namespace Codenation.Challenge.Models
         [Required]
         public decimal Score { get; set; }
 
-        [Column("create_at")]
+        [Column("created_at")]
         [Required]
-        public DateTime CreateAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
     }
 }

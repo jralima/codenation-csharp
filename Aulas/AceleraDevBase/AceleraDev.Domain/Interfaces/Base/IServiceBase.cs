@@ -9,7 +9,7 @@ namespace AceleraDev.Domain.Interfaces.Base
     /// <typeparam name="TModel"></typeparam>
     public interface IServiceBase<TModel> where TModel : class
     {
-        void Add(TModel obj);
+        TModel Add(TModel obj);
         void Update(TModel obj);
         void Remove(Guid id);
         TModel GetById(Guid id);

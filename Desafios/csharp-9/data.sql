@@ -1,7 +1,7 @@
 USE Codenation;
 
 SET IDENTITY_INSERT [challenge] ON;
-  INSERT INTO [challenge] ([id], [create_at], [name], [slug])
+  INSERT INTO [challenge] ([id], [created_at], [name], [slug])
   VALUES (1, '2019-04-16T13:11:18.0000000', N'Lutra canadensis', N'cmingaud0-celtun0'),
   (2, '2019-05-23T13:05:49.0000000', N'Merops nubicus', N'chicken1-iwhyard1'),
   (3, '2018-09-02T11:06:17.0000000', N'Alligator mississippiensis', N'mrackley2-apohling2'),
@@ -15,7 +15,7 @@ SET IDENTITY_INSERT [challenge] ON;
 SET IDENTITY_INSERT [challenge] OFF;
 
 SET IDENTITY_INSERT [company] ON;
-  INSERT INTO [company] ([id], [create_at], [name], [slug])
+  INSERT INTO [company] ([id], [created_at], [name], [slug])
   VALUES (10, '2018-11-03T08:31:36.0000000', N'Little, Pfannerstill and Harris', N'rjurczak9-egillings9'),
   (9, '2018-10-21T15:30:28.0000000', N'Cormier Group', N'ckovelmann8-rkrop8'),
   (8, '2019-03-04T20:47:38.0000000', N'D''Amore, Carter and Cremin', N'elesor7-ctemlett7'),
@@ -29,7 +29,7 @@ SET IDENTITY_INSERT [company] ON;
 SET IDENTITY_INSERT [company] OFF;
 
 SET IDENTITY_INSERT [user] ON;
-  INSERT INTO [user] ([id], [create_at], [email], [full_name], [nickname], [password])
+  INSERT INTO [user] ([id], [created_at], [email], [full_name], [nickname], [password])
   VALUES (1, '2019-06-17T06:35:28.0000000', N'ccapaldi0@exblog.jp', N'Chlo Capaldi', N'Chlo', N'coOuP45ZbK'),
   (2, '2018-08-25T17:45:58.0000000', N'vcowwell1@lycos.com', N'Vivia Cowwell', N'Vivia', N'KA9yknYe'),
   (3, '2019-06-06T22:01:28.0000000', N'owynn2@themeforest.net', N'Osborne Wynn', N'Osborne', N'XU3ydNp8iv8'),
@@ -43,14 +43,14 @@ SET IDENTITY_INSERT [user] ON;
 SET IDENTITY_INSERT [user] OFF;
 
 SET IDENTITY_INSERT [acceleration] ON;
-  INSERT INTO [acceleration] ([id], [challenge_id], [create_at], [name], [slug])
+  INSERT INTO [acceleration] ([id], [challenge_id], [created_at], [name], [slug])
   VALUES (1, 2, '2019-05-13T00:58:05.0000000', N'Velvet Grass', N'shuge1-gmcgauhy1'),
   (2, 3, '2019-06-18T10:47:40.0000000', N'Progesterone', N'tinkster2-sedsall2'),
   (3, 5, '2018-11-10T09:45:27.0000000', N'Temazepam', N'oantognetti4-bivashintsov4'),
   (4, 10, '2019-05-18T10:14:05.0000000', N'Stool Softener', N'cdishman9-mvinall9');
 SET IDENTITY_INSERT [acceleration] OFF;
 
-  INSERT INTO [submission] ([user_id], [challenge_id], [create_at], [score])
+  INSERT INTO [submission] ([user_id], [challenge_id], [created_at], [score])
   VALUES (7, 7, '2018-10-03T02:06:59.0000000', 58.9),
   (6, 6, '2018-12-12T18:25:55.0000000', 33.97),
   (5, 8, '2019-04-28T06:38:22.0000000', 40.33),
@@ -71,7 +71,7 @@ SET IDENTITY_INSERT [acceleration] OFF;
   (3, 6, '2019-01-23T04:22:01.0000000', 67.08),
   (9, 9, '2018-12-18T16:00:43.0000000', 51.18);
 
-  INSERT INTO [candidate] ([user_id], [acceleration_id], [company_id], [create_at], [status])
+  INSERT INTO [candidate] ([user_id], [acceleration_id], [company_id], [created_at], [status])
   VALUES (1, 1, 1, '2019-06-10T18:10:43.0000000', 2),
   (1, 4, 1, '2019-01-04T01:21:18.0000000', 1),
   (4, 4, 4, '2019-01-14T14:20:39.0000000', 2),

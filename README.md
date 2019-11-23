@@ -3,10 +3,10 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 54%
+## Concluído: 61%
 
 #### Desafios de Código Completados: 8
-#### Desafios de Conteúdo Completados: 25
+#### Desafios de Conteúdo Completados: 30
 #### Média das Notas nos Desafios: 100%
 #### CSharp - 12 módulos:
 
@@ -106,9 +106,20 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Status Codes (20X, 40X, 50X)
 - Acessando banco de dados
 - Atividades:
-  - 
+  - [Tutorial: criar uma API Web com ASP.NET Core](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.2&tabs=visual-studio)
+  - [Visão geral do Entity Framework Core – EF Core](https://docs.microsoft.com/pt-br/ef/core/)
+  - [Migration in Entity Framework Core](https://www.entityframeworktutorial.net/efcore/entity-framework-core-migration.aspx)
+  - [Tutorial: criar uma API Web com ASP.NET Core](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.2&tabs=visual-studio)
+  - [ASP.NET Core MVC com EF Core – série de tutoriais](https://docs.microsoft.com/pt-br/aspnet/core/data/ef-mvc/?view=aspnetcore-2.2)
+  - [LocalDb – Uma alternativa simples e rápida](https://codigoecafe.com/2013/03/12/localdb-uma-alternativa-simples-e-rapida/)
+  - [Utilitário SqlLocalDB - SQL Server](https://docs.microsoft.com/pt-br/sql/tools/sqllocaldb-utility?view=sql-server-2017)
+  - [Using Automapper In ASP.net Core](https://dotnetcoretutorials.com/2017/09/23/using-automapper-asp-net-core/)
+  - [Test controller logic in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/testing?view=aspnetcore-2.2)
+  - [Unit Testing in ASP.NET Core Web API](https://code-maze.com/unit-testing-aspnetcore-web-api/)
+  - [Testing with a mocking framework - EF6](https://docs.microsoft.com/en-us/ef/ef6/fundamentals/testing/mocking)
 - Desafios:
-  - [ ] 
+  - [ ] [Gerador de frases do Monty Python](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-5)
+  - [ ] [Criando controladores Web API](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-9)
    - Score: 0%
    - Tentativas: 0
 

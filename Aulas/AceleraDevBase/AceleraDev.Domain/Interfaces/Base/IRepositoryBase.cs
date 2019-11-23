@@ -13,7 +13,7 @@ namespace AceleraDev.Domain.Interfaces.Base
         /// Método para incluir um novo registro
         /// </summary>
         /// <param name="obj">Objeto a ser incluído</param>
-        void Add(TModel obj);
+        TModel Add(TModel obj);
 
         /// <summary>
         /// Método para alterar um registro
