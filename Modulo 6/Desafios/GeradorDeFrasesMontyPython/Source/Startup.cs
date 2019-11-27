@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Codenation.Challenge.Models;
+using Codenation.Challenge.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,11 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using AutoMapper;
-using Codenation.Challenge.Models;
-using Codenation.Challenge.Services;
 
-namespace Source
+namespace Codenation.Challenge
 {
     public class Startup
     {
@@ -27,17 +26,10 @@ namespace Source
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ScriptsContext>();
+            services.AddScoped<IQuoteService, QuoteService>();
+            services.AddScoped<IRandomService, RandomService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddDbContext<CodenationContext>();
-            services.AddAutoMapper(typeof(Startup));
-
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAccelerationService, AccelerationService>();
-            services.AddScoped<ICandidateService, CandidateService>();
-            services.AddScoped<IChallengeService, ChallengeService>();
-            services.AddScoped<ICompanyService, CompanyService>();
-            services.AddScoped<ISubmissionService, SubmissionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

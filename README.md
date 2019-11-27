@@ -119,9 +119,9 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
   - [Testing with a mocking framework - EF6](https://docs.microsoft.com/en-us/ef/ef6/fundamentals/testing/mocking)
 - Desafios:
   - [ ] [Gerador de frases do Monty Python](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-5)
-  - [ ] [Criando controladores Web API](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-9)
-   - Score: 0%
-   - Tentativas: 0
+  - [X] [Criando controladores Web API](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-9)
+   - Score: 100%
+   - Tentativas: 1
 
 ## Módulo 7 
 - Documentação e autenticação de APIs

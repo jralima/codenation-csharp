@@ -22,68 +22,43 @@ namespace Codenation.Challenge.Controllers
             this.mapper = mapper;
         }
 
-        // GET api/user
         [HttpGet("{accelerationName}?/{companyId}?")]
         public ActionResult<IEnumerable<UserDTO>> GetAll(string accelerationName = null, int? companyId = null)
         {
-            /*
-            Quando não informados ou quando ambos informados, deve retornar status 204
-             - parâmetro accelerationName: deve apontar para o método FindByAccelerationName e retornar uma lista de UserDTO
-             - parâmetro companyId: deve apontar para o método FindByCompanyId e retornar uma lista de UserDTO
-                */
             if ((accelerationName != default && companyId != default))
                 return NoContent();
 
             if (accelerationName != default)
             {
-                var accelerations = service.FindByAccelerationName(accelerationName);
+                var accelerations = service.FindByAccelerationName(accelerationName).
+                    Select(x => mapper.Map<UserDTO>(x)).
+                    ToList();
 
-                if (accelerationName != default)
-                {
-                    var listUserDTO = mapper.Map<UserDTO>(accelerations);
-                    return Ok(listUserDTO);
-                }
-                return NoContent();
+                return Ok(accelerations);
             }
 
             if (companyId != default)
             {
-                var accelerations = service.FindByCompanyId(companyId.Value);
+                var accelerations = service.FindByCompanyId(companyId.Value).
+                    Select(x => mapper.Map<UserDTO>(x)).
+                    ToList();
 
-                if (accelerationName != default)
-                {
-                    var listUserDTO = mapper.Map<UserDTO>(accelerations);
-                    return Ok(listUserDTO);
-                }
+                return Ok(accelerations);
             }
 
             return NoContent();
         }
 
-        // GET api/user/{id}
         [HttpGet("{id}")]
         public ActionResult<UserDTO> Get(int id)
         {
-            //deve apontar para o método FindById e retornar um UserDTO
-            if (id != default)
-            {
-                var user = service.FindByCompanyId(id);
-
-                if (user != default)
-                {
-                    var listUserDTO = mapper.Map<UserDTO>(user);
-                    return Ok(listUserDTO);
-                }
-            }
-
-            return NoContent();
+            var user = mapper.Map<UserDTO>(service.FindById(id));
+            return Ok(user);
         }
 
-        // POST api/user
         [HttpPost]
         public ActionResult<UserDTO> Post([FromBody] UserDTO value)
         {
-            // deve receber um UserDTO, apontar para o método Save e retornar um UserDTO
             if (value != default)
             {
                 var user = mapper.Map<User>(value);
