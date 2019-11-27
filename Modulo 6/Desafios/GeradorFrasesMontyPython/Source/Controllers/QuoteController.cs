@@ -31,7 +31,8 @@ namespace Codenation.Challenge.Controllers
             obj.Detail = result.Detail;
             obj.Id = result.Id;
 
-            return new OkObjectResult(obj).Value = obj;
+            return new ActionResult<QuoteView>(obj);
+
         }
 
         // GET api/quote/{actor}
@@ -48,7 +49,7 @@ namespace Codenation.Challenge.Controllers
             obj.Detail = result.Detail;
             obj.Id = result.Id;
 
-            return new OkObjectResult(obj);
+            return new ActionResult<QuoteView>(obj);
         }
 
     }

@@ -3,9 +3,9 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 61%
+## Concluído: 62%
 
-#### Desafios de Código Completados: 8
+#### Desafios de Código Completados: 10
 #### Desafios de Conteúdo Completados: 30
 #### Média das Notas nos Desafios: 100%
 #### CSharp - 12 módulos:
@@ -118,7 +118,9 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
   - [Unit Testing in ASP.NET Core Web API](https://code-maze.com/unit-testing-aspnetcore-web-api/)
   - [Testing with a mocking framework - EF6](https://docs.microsoft.com/en-us/ef/ef6/fundamentals/testing/mocking)
 - Desafios:
-  - [ ] [Gerador de frases do Monty Python](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-5)
+  - [X] [Gerador de frases do Monty Python](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-5)
+   - Score: 100%
+   - Tentativas: 1
   - [X] [Criando controladores Web API](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-9)
    - Score: 100%
    - Tentativas: 1
