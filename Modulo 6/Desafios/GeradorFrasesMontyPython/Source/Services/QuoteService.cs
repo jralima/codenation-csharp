@@ -19,17 +19,16 @@ namespace Codenation.Challenge.Services
         public Quote GetAnyQuote()
         {
             // "SELECT actor, detail FROM scripts WHERE type = 'Dialogue' AND actor IS NOT NULL ORDER BY RANDOM() LIMIT 1";
-            var quotes = _context.Quotes.Where(x => x.Type == "Dialogue" && x.Actor != null).ToList();
+            var quotes = _context.Quotes.Where(x => x.Actor != null).ToList();
 
             return quotes.
-                OrderBy(x => _randomService.RandomInteger(quotes.Count)).
+                OrderBy(x => _randomService.RandomInteger(quotes.Count) > 0).
                 FirstOrDefault();
         }
 
         public Quote GetAnyQuote(string actor)
         {
-            // "SELECT actor, detail FROM scripts WHERE type = 'Dialogue' AND actor = ? ORDER BY RANDOM() LIMIT 1";
-            var quotes = _context.Quotes.Where(x => x.Type == "Dialogue" && x.Actor == actor).ToList();
+            var quotes = _context.Quotes.Where(x => x.Actor.Equals(actor)).ToList();
             return quotes.
                 OrderBy(x => _randomService.RandomInteger(quotes.Count)).
                 FirstOrDefault();
