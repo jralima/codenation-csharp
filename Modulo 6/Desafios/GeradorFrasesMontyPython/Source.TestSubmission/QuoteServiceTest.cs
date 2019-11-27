@@ -34,6 +34,34 @@ namespace Codenation.Challenge
         }
 
         [Fact]
+        public void Should_Returns_Any_Quote_When_Get_Any_Quote()
+        {
+            var fakeRandom = new Mock<IRandomService>();
+            fakeRandom.Setup(x => x.RandomInteger(It.IsAny<int>())).Returns(0);
+            var service = new QuoteService(fakeContext.Object, fakeRandom.Object);
+
+            var actual = service.GetAnyQuote();            
+            Assert.NotNull(actual);
+            Assert.Equal("Eric", actual.Actor);
+            Assert.Equal(1, actual.Id);
+            Assert.Equal("Ni", actual.Detail);
+        }
+
+        [Fact]
+        public void Should_Returns_Any_Quote_When_Get_Any_Quote_By_Actor()
+        {
+            var fakeRandom = new Mock<IRandomService>();
+            fakeRandom.Setup(x => x.RandomInteger(It.IsAny<int>())).Returns(0);
+            var service = new QuoteService(fakeContext.Object, fakeRandom.Object);
+
+            var actual = service.GetAnyQuote("Eric");
+            Assert.NotNull(actual);
+            Assert.Equal("Eric", actual.Actor);
+            Assert.Equal(1, actual.Id);
+            Assert.Equal("Ni", actual.Detail);
+        }
+
+        [Fact]
         public void Should_Returns_Null_When_Get_Any_Quote_By_Non_Exists_Actor()
         {
             var fakeService = new QuoteService(fakeContext.Object, new RandomService());            

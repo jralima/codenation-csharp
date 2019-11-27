@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Codenation.Challenge.Models;
 
@@ -17,12 +18,21 @@ namespace Codenation.Challenge.Services
 
         public Quote GetAnyQuote()
         {
-            throw new System.NotImplementedException();
+            // "SELECT actor, detail FROM scripts WHERE type = 'Dialogue' AND actor IS NOT NULL ORDER BY RANDOM() LIMIT 1";
+            var quotes = _context.Quotes.Where(x => x.Type == "Dialogue" && x.Actor != null).ToList();
+
+            return quotes.
+                OrderBy(x => _randomService.RandomInteger(quotes.Count)).
+                FirstOrDefault();
         }
 
         public Quote GetAnyQuote(string actor)
         {
-            throw new System.NotImplementedException();
+            // "SELECT actor, detail FROM scripts WHERE type = 'Dialogue' AND actor = ? ORDER BY RANDOM() LIMIT 1";
+            var quotes = _context.Quotes.Where(x => x.Type == "Dialogue" && x.Actor == actor).ToList();
+            return quotes.
+                OrderBy(x => _randomService.RandomInteger(quotes.Count)).
+                FirstOrDefault();
         }
     }
 }

@@ -25,7 +25,6 @@ namespace Codenation.Challenge
             });
 
             var fakeQuotes = fakeData.AsQueryable();
-            
             var fakeDbSet = new Mock<DbSet<Quote>>();
             fakeDbSet.As<IQueryable<Quote>>().Setup(x => x.Provider).Returns(fakeQuotes.Provider);
             fakeDbSet.As<IQueryable<Quote>>().Setup(x => x.Expression).Returns(fakeQuotes.Expression);
@@ -35,13 +34,43 @@ namespace Codenation.Challenge
             this.fakeContext = new Mock<ScriptsContext>();            
             this.fakeContext.Setup(x => x.Quotes).Returns(fakeDbSet.Object);
         }
-    
+
         [Fact]
-        public void Should_Returns_Not_Found_When_Get_Any_Quote_By_Non_Exists_Actor()
+        public void Should_Returns_Random_Quote_When_Get_Any()
         {
             var fakeRandom = new Mock<IRandomService>();
             fakeRandom.Setup(x => x.RandomInteger(It.IsAny<int>())).Returns(0);
-            var fakeService = new QuoteService(fakeContext.Object, fakeRandom.Object);
+            var fakeService = new QuoteService(fakeContext.Object, fakeRandom.Object);            
+            var controller = new QuoteController(fakeService);
+
+            var actual = controller.GetAnyQuote();            
+            Assert.NotNull(actual);
+            Assert.IsNotType<NotFoundResult>(actual.Result);
+            Assert.Equal("Eric", actual.Value.Actor);
+            Assert.Equal(1, actual.Value.Id);
+            Assert.Equal("Ni", actual.Value.Detail);
+        }
+
+        [Fact]
+        public void Should_Returns_Random_Quote_When_Get_Any_By_Actor()
+        {
+            var fakeRandom = new Mock<IRandomService>();
+            fakeRandom.Setup(x => x.RandomInteger(It.IsAny<int>())).Returns(0);
+            var fakeService = new QuoteService(fakeContext.Object, fakeRandom.Object);            
+            var controller = new QuoteController(fakeService);
+
+            var actual = controller.GetAnyQuote("Eric");
+            Assert.NotNull(actual);
+            Assert.IsNotType<NotFoundResult>(actual.Result);
+            Assert.Equal("Eric", actual.Value.Actor);
+            Assert.Equal(1, actual.Value.Id);
+            Assert.Equal("Ni", actual.Value.Detail);
+        }
+
+        [Fact]
+        public void Should_Returns_Not_Found_When_Get_Any_Quote_By_Non_Exists_Actor()
+        {
+            var fakeService = new QuoteService(fakeContext.Object, new RandomService());            
             var controller = new QuoteController(fakeService);
 
             var actual = controller.GetAnyQuote("Brian");
