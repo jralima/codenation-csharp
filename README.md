@@ -3,7 +3,7 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 62%
+## Concluído: 69%
 
 #### Desafios de Código Completados: 10
 #### Desafios de Conteúdo Completados: 30
@@ -129,10 +129,16 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Documentação e autenticação de APIs
 - Documentação de APIs (Swagger) 
 - Autenticação de APIs
-- Atividades:
-  - 
+- Atividades: 
+  - [Introduction to authorization in ASP.NET Core 2.2](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/introduction?view=aspnetcore-2.2)
+  - [Claims-based authorization in ASP.NET Core 2.2](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/claims?view=aspnetcore-2.2)
+  - [The Big Picture - IdentityServer4 (ASP.NET Core 2.x)](http://docs.identityserver.io/en/aspnetcore2/intro/big_picture.html)
+  - [Protecting an API using Passwords - IdentityServer4 (ASP.NET Core 2.x)](http://docs.identityserver.io/en/aspnetcore2/quickstarts/2_resource_owner_passwords.html)
+  - [Integration tests in ASP.NET Core 2.2](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
+  - Links:
+   - [Entendendo tokens JWT (Json Web Token)](https://medium.com/tableless/entendendo-tokens-jwt-json-web-token-413c6d1397f6)
 - Desafios:
-  - [ ] 
+  - [ ] [Configurando a autorização de acesso de Web API com JWT](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-10)
    - Score: 0%
    - Tentativas: 0
 

@@ -1,18 +1,23 @@
 ﻿using AceleraDev.Application.Interfaces;
 using AceleraDev.Application.ViewModels;
+using AceleraDev.CrossCutting.Constants;
+using AceleraDevBase.Api.Controllers.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace AceleraDevBase.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class ClienteController : BaseController
     {
         private readonly IClienteAppService _clienteAppService;
-        public ClienteController(IClienteAppService clienteAppService)
+        private readonly IUsuarioAppService usuarioAppService;
+
+        public ClienteController(IClienteAppService clienteAppService, IUsuarioAppService usuarioAppService)
+            : base(usuarioAppService)
         {
             _clienteAppService = clienteAppService;
         }
@@ -135,8 +140,6 @@ namespace AceleraDevBase.Api.Controllers
                     $"\nErro: {ex.Message}"
                 });
             }
-
-
         }
 
         // POST: api/cliente/id
@@ -146,7 +149,7 @@ namespace AceleraDevBase.Api.Controllers
         {
             try
             {
-                cliente = _clienteAppService.Add(cliente);
+                cliente = _clienteAppService.Add(cliente, UsuarioId);
 
                 return Created($"{Request.Path.Value}/{cliente.Id}", cliente);
             }
@@ -161,12 +164,13 @@ namespace AceleraDevBase.Api.Controllers
         }
 
         // DELETE: api/cliente/id
+        [Authorize(Roles = Constants.PERFIL_ADMIN)]
         [HttpDelete("{id}")]
         public ActionResult Remove([FromQuery()] Guid id)
         {
             try
             {
-                _clienteAppService.Remove(id);
+                _clienteAppService.Remove(id, UsuarioId);
                 return Ok();
             }
             catch (Exception ex)

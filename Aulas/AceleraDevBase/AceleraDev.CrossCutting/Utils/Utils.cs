@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace AceleraDev.CrossCutting.Utils
@@ -88,9 +89,29 @@ namespace AceleraDev.CrossCutting.Utils
             var result = "";
             for (int i = 0; i < 11; i++)
             {
-                result += i.ToString(); 
+                result += i.ToString();
             }
             return result;
+        }
+
+        // o "this" indica que será passado o próprio valor.
+        // ex: "12345".ToHashMD5()
+        // é como se fosse ToHashMD5("12345")
+        // utilizando o this, seria mais elegante, da mesma forma que é feito no .ToString()
+        public static string ToHashMD5(this string input)
+        {
+            var md5Hash = MD5.Create();
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            StringBuilder sBuilder = new StringBuilder();
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            return sBuilder.ToString();
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using AceleraDev.Domain.Models;
+﻿using AceleraDev.CrossCutting.Constants;
+using AceleraDev.CrossCutting.Utils;
+using AceleraDev.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -22,7 +24,8 @@ namespace AceleraDev.Data.Context
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<PedidoItem> PedidoItens { get; set; }
-        
+        public DbSet<Usuario> Usuarios { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(t => t.GetProperties()).Where(p => p.ClrType == typeof(string)))
@@ -36,9 +39,11 @@ namespace AceleraDev.Data.Context
             }
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AceleraDevContext).Assembly);
-            
+
             //Incluíndo no momento de criar a tabela (como se fosse um script "base")
             //modelBuilder.Entity<Cliente>().HasData(new Cliente { Nome = "Lacerda"});
+            modelBuilder.Entity<Usuario>().HasData(new Usuario { Nome = "Administrador", Email = "admin@mail.com", Senha = "1234".ToHashMD5(), Perfil = Constants.PERFIL_ADMIN });
+            modelBuilder.Entity<Usuario>().HasData(new Usuario { Nome = "Vendedor", Email = "vendedor@mail.com", Senha = "1234".ToHashMD5(), Perfil = Constants.PERFIL_VENDEDOR });
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
