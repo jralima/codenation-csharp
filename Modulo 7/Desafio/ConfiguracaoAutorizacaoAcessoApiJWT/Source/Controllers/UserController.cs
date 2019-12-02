@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Codenation.Challenge.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]    
     [ApiController]
     public class UserController : ControllerBase
