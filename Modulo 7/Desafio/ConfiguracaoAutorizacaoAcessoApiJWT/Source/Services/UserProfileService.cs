@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Security.Claims;
@@ -32,9 +33,8 @@ no token.
             var request = context.ValidatedRequest as ValidatedTokenRequest;
             if (request != null)
             {
-                
+                context.IssuedClaims = request.Subject.Claims.ToList();
             }
-
             return Task.CompletedTask;
         }
 

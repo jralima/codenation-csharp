@@ -3,10 +3,10 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 69%
+## Concluído: 70%
 
-#### Desafios de Código Completados: 10
-#### Desafios de Conteúdo Completados: 30
+#### Desafios de Código Completados: 11
+#### Desafios de Conteúdo Completados: 35
 #### Média das Notas nos Desafios: 100%
 #### CSharp - 12 módulos:
 
@@ -138,9 +138,9 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
   - Links:
    - [Entendendo tokens JWT (Json Web Token)](https://medium.com/tableless/entendendo-tokens-jwt-json-web-token-413c6d1397f6)
 - Desafios:
-  - [ ] [Configurando a autorização de acesso de Web API com JWT](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-10)
-   - Score: 0%
-   - Tentativas: 0
+  - [X] [Configurando a autorização de acesso de Web API com JWT](https://www.codenation.dev/private-journey/csharp-florianopolis-1/challenge/csharp-10)
+   - Score: 100%
+   - Tentativas: 1
 
 ## Módulo 8 
 - Git, boas práticas e clean code

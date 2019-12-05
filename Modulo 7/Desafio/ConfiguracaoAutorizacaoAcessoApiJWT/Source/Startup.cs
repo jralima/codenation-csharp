@@ -16,6 +16,8 @@ using System.Security.Claims;
 using System.Net.Http;
 using IdentityServer4.Services;
 using IdentityServer4.Validation;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Source
 {
@@ -61,7 +63,14 @@ namespace Source
                     options.Authority = "http://localhost:5000"; 
                     options.RequireHttpsMetadata = false;                      
                     options.Audience = "codenation";                   
-                });  
+                });
+
+            services.AddAuthorization(auth =>
+            {
+                auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
+                    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme‌​)
+                    .RequireAuthenticatedUser().Build());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

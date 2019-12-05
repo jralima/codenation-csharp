@@ -28,7 +28,7 @@ namespace Codenation.Challenge.Models
         [ForeignKey("ChallengeId")]
         public virtual Challenge Challenge { get; set; }
 
-        [Column("created_at")]
+        [Column("create_at")]
         [Required]
         public DateTime CreatedAt { get; set; }
 

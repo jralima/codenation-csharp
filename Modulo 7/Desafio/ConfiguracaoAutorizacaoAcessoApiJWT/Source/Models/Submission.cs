@@ -23,7 +23,7 @@ namespace Codenation.Challenge.Models
         [Required]
         public decimal Score { get; set; }
 
-        [Column("created_at")]
+        [Column("create_at")]
         [Required]
         public DateTime CreatedAt { get; set; }
 
