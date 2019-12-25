@@ -3,10 +3,10 @@ Aceleração Codenation - Turma de csharp (AceleraDev C#)
 
 Programa de aceleração gratuitos para devs e cientistas de dados - dê o próximo passo da sua carreira e mostre seu potencial às empresas de tecnologia.
 
-## Concluído: 70%
+## Concluído: 78%
 
 #### Desafios de Código Completados: 11
-#### Desafios de Conteúdo Completados: 35
+#### Desafios de Conteúdo Completados: 43
 #### Média das Notas nos Desafios: 100%
 #### CSharp - 12 módulos:
 
@@ -145,9 +145,16 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 ## Módulo 8 
 - Git, boas práticas e clean code
 - Atividades:
-  - 
+  - [Princípios do Código Sólido na orientação a objetos](https://blog.caelum.com.br/principios-do-codigo-solido-na-orientacao-a-objetos)
+  - [Princípios S.O.L.I.D: o que são e porque projetos devem utilizá-los](https://medium.com/equals-lab/princ%C3%ADpios-s-o-l-i-d-o-que-s%C3%A3o-e-porque-projetos-devem-utiliz%C3%A1-los-bf496b82b299)
+  - [Clean Code: aprenda a manter o seu código limpo!](https://becode.com.br/clean-code)
+  - [Boas práticas técnica para um código limpo (Clean Code)](https://pt.slideshare.net/rodrigokono/boas-prticas-tcnica-para-um-cdigo-limpo-clean-code)
+  - [Object Calisthenics](https://williamdurand.fr/2013/06/03/object-calisthenics/)
+  - [Test Driven Development: TDD Simples e Prático](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533)
+  - [Introdução ao desenvolvimento guiado por teste (TDD) com JUnit](https://www.devmedia.com.br/introducao-ao-desenvolvimento-guiado-por-teste-tdd-com-junit/26559)
+  - [Garantia da qualidade de software com TDD (Test Driven Development)](https://www.knowledge21.com.br/blog/qualidade-de-software-com-tdd-test-driven-development/)
 - Desafios:
-  - [ ] 
+  - [ ] [Quiz SOLID e Clean Code](https://www.codenation.dev/private-journey/csharp-florianopolis-1/quiz/quiz-solid-clean-code)
    - Score: 0%
    - Tentativas: 0
 
@@ -155,9 +162,9 @@ Programa de aceleração gratuitos para devs e cientistas de dados - dê o próx
 - Deploy de aplicações
 - Ferramentas e processos de deploy na nuvem
 - Atividades:
-  - 
+  - []()
 - Desafios:
-  - [ ] 
+  - [ ] []()
    - Score: 0%
    - Tentativas: 0
 

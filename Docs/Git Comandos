@@ -1,0 +1,37 @@
+https://www.youtube.com/playlist?list=PLQCmSnNFVYnRdgxOC_ufH58NxlmM6VYd1
+https://www.gitkraken.com/
+
+// Inicializar o repo
+git init
+
+git status
+
+git add -a
+git add .
+git add  arquivo
+
+git commit -m ""
+
+ git log
+
+// criar a branch
+git branch nome-da-branch
+
+// trocar de branch
+git checkout nome-da-branch
+
+// excluir branch
+git branch -d nome-da-branch
+
+ git log --all --oneline
+
+git diff b.txt
+
+// Retirar arquivos do stage
+git reset
+
+//desfazer mudança
+git checkout arquivo
+
+// volto para o commit, desfaz todas as mudanças. CUIDADO!!!!!
+git reset --hard

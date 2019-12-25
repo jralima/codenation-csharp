@@ -7,12 +7,17 @@ using AceleraDev.Application.ViewModels;
 using AceleraDev.Application.ViewModels.Autenticacao;
 using AceleraDev.CrossCutting.Helpers;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AceleraDevBase.Api.Controllers
 {
+    /// <summary>
+    /// Login do usuário
+    /// </summary>
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     [AllowAnonymous]
@@ -27,7 +32,28 @@ namespace AceleraDevBase.Api.Controllers
             this._appSettings = appSettings.Value;
         }
 
+        /// <summary>
+        /// Endpoint do Login do usuário
+        /// </summary>
+        /// <remarks>
+        /// Exemplo de requisção:
+        ///
+        ///     POST /login
+        ///     {
+        ///        "email": "mail@mail.com",
+        ///        "password": "123456"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="usuario"></param>
+        /// <returns>Retornar token e o usuário logado</returns>
+        /// <response code="200">Usuário autorizado</response>
+        /// <response code="400">Falha no login</response> 
+        /// <response code="401">Usuário não autorizado</response> 
         [HttpPost()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult Login([FromBody()] LoginViewModel usuario)
         {
             try

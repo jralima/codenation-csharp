@@ -149,7 +149,7 @@ namespace AceleraDevBase.Api.Controllers
         {
             try
             {
-                cliente = _clienteAppService.Add(cliente, UsuarioId);
+                cliente = _clienteAppService.Add(cliente);
 
                 return Created($"{Request.Path.Value}/{cliente.Id}", cliente);
             }
@@ -170,7 +170,7 @@ namespace AceleraDevBase.Api.Controllers
         {
             try
             {
-                _clienteAppService.Remove(id, UsuarioId);
+                _clienteAppService.Remove(id);
                 return Ok();
             }
             catch (Exception ex)

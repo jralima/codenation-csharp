@@ -13,6 +13,10 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using Microsoft.OpenApi.Models;
+using System.Collections.Generic;
+using System.Reflection;
+using System.IO;
 
 namespace AceleraDevBase.Api
 {
@@ -30,12 +34,12 @@ namespace AceleraDevBase.Api
         {
             services.AddControllers()
                 // Desabilitar referência ciricular na serialização dos JSON
-                .AddNewtonsoftJson(opt => 
+                .AddNewtonsoftJson(opt =>
                 {
                     opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                     // Excluíndo os valores NULL do json, evitando assim que seja trafegado dados desnecessários
                     opt.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-                 });
+                });
 
             // Configuração da injeção de dependências
             RegisterIoC.Register(services);
@@ -52,6 +56,9 @@ namespace AceleraDevBase.Api
 
             // Configuração da autenticação JWT
             ConfigureAuth(services);
+
+            // Configuração Swagger
+            ConfiguracaoSwagger(services);
         }
 
         private void ConfigureAuth(IServiceCollection services)
@@ -86,6 +93,82 @@ namespace AceleraDevBase.Api
             });
         }
 
+        private void ConfiguracaoSwagger(IServiceCollection services)
+        {
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "API AceleraDev",
+                    Version = "1.0.0",
+                    Description = "API para fornecimento de dados para execuçãoo funcionalidades do AceleraDev.</br>",
+                    License = new OpenApiLicense
+                    {
+                        Url = new Uri("http://www.gmail.com")
+                    },
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Lacerda Junior",
+                        Email = "junior.lacerda16@hotmail.com",
+                        Url = new Uri("http://www.gmail.com")
+                    }
+                });
+
+                config.SwaggerDoc("v2", new OpenApiInfo
+                {
+                    Title = "API AceleraDev",
+                    Version = "2.0.0",
+                    Description = "Versão 2.</br>",
+                    License = new OpenApiLicense
+                    {
+                        Url = new Uri("http://www.gmail.com")
+                    },
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Lacerda Junior",
+                        Email = "junior.lacerda16@hotmail.com",
+                        Url = new Uri("http://www.gmail.com")
+                    }
+                });
+
+                var security = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[] { }},
+                };
+
+                config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header usando Bearer scheme. Exemplo: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                config.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                },
+                                Scheme = "oauth2",
+                                Name = "Bearer",
+                                In = ParameterLocation.Header,
+
+                            },
+                            new List<string>()
+                        }
+                    });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                config.IncludeXmlComments(xmlPath);
+            });
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -101,6 +184,15 @@ namespace AceleraDevBase.Api
             app.UseAuthentication();
 
             app.UseAuthorization();
+            app.UseStaticFiles();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
+            {
+                config.SwaggerEndpoint("/swagger/v1/swagger.json", "API - AceleraDev V1");
+                config.SwaggerEndpoint("/swagger/v2/swagger.json", "API - AceleraDev V2");
+                config.RoutePrefix = string.Empty;
+            });
 
             app.UseEndpoints(endpoints =>
             {
